@@ -1,0 +1,2321 @@
+{
+    "about": "Merchant conversations for `php artisan chat:eval`. Store data is FakeStoreData: orders 1042, 1055-1058; products Denim Jacket, Blue Hoodie, Beanie, Leather Belt (draft); refund + shipping policies; WELCOME10 + free shipping discounts. group: owner = written by the store owner (the user), seen = wording from real testing (rules were tuned on it), fresh = new wording for a real need. expect = one entry per question in the message, in order; intent and target may list several acceptable values; a target ending in * matches by prefix. known_gap = the app cannot do this yet, so a failure is expected.",
+    "cases": [
+        {
+            "id": "seen-howto-create-order",
+            "group": "seen",
+            "category": "how_to",
+            "message": "how to create order",
+            "expect": [
+                {
+                    "intent": "HowTo",
+                    "target": "guide:create-order"
+                }
+            ]
+        },
+        {
+            "id": "seen-product-list",
+            "group": "seen",
+            "category": "products",
+            "message": "give all the product list",
+            "expect": [
+                {
+                    "intent": "Products"
+                }
+            ]
+        },
+        {
+            "id": "seen-product-list-rude",
+            "group": "seen",
+            "category": "products",
+            "message": "mother fucker give all the product list",
+            "expect": [
+                {
+                    "intent": "Products"
+                }
+            ]
+        },
+        {
+            "id": "seen-insult-1",
+            "group": "seen",
+            "category": "other",
+            "message": "hey btich",
+            "expect": [
+                {
+                    "intent": "Other",
+                    "target": "out_of_scope"
+                }
+            ]
+        },
+        {
+            "id": "seen-insult-2",
+            "group": "seen",
+            "category": "other",
+            "message": "damm you idiot",
+            "expect": [
+                {
+                    "intent": "Other",
+                    "target": "out_of_scope"
+                }
+            ]
+        },
+        {
+            "id": "seen-autopilot",
+            "group": "seen",
+            "category": "explain_page",
+            "message": "Campaign Autopilot what is this page what task i can perfome there and how i use this page in the future",
+            "expect": [
+                {
+                    "intent": "ExplainPage",
+                    "target": "guide:campaign-autopilot"
+                }
+            ],
+            "note": "One question about one page, even though it contains 'and how'."
+        },
+        {
+            "id": "seen-collect-payment-follow-up",
+            "group": "seen",
+            "category": "context",
+            "setup": [
+                "how to create order"
+            ],
+            "setup_expect": [
+                "HowTo"
+            ],
+            "message": "there is the option here saying collect payment / card payment",
+            "expect": [
+                {
+                    "intent": "HowTo",
+                    "target": [
+                        "guide:draft-order-collect-payment",
+                        "guide:create-order"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "seen-what-is-finance",
+            "group": "seen",
+            "category": "explain_page",
+            "message": "what is finance",
+            "expect": [
+                {
+                    "intent": "ExplainPage",
+                    "target": "guide:finance"
+                }
+            ]
+        },
+        {
+            "id": "seen-what-are-you",
+            "group": "seen",
+            "category": "other",
+            "message": "what are yoiu",
+            "expect": [
+                {
+                    "intent": "Other",
+                    "target": "out_of_scope"
+                }
+            ]
+        },
+        {
+            "id": "seen-hack",
+            "group": "seen",
+            "category": "other",
+            "message": "hack the shopify",
+            "expect": [
+                {
+                    "intent": "Other"
+                }
+            ]
+        },
+        {
+            "id": "seen-previous-month",
+            "group": "seen",
+            "category": "order_stats",
+            "message": "previous month orders",
+            "expect": [
+                {
+                    "intent": "OrderStats"
+                }
+            ]
+        },
+        {
+            "id": "seen-all-order-list",
+            "group": "seen",
+            "category": "order_stats",
+            "message": "bring me all order list",
+            "expect": [
+                {
+                    "intent": "OrderStats"
+                }
+            ]
+        },
+        {
+            "id": "seen-low-stock",
+            "group": "seen",
+            "category": "products",
+            "message": "Show me products with low stock.",
+            "expect": [
+                {
+                    "intent": "Products"
+                }
+            ]
+        },
+        {
+            "id": "seen-their-prices",
+            "group": "seen",
+            "category": "context",
+            "setup": [
+                "Show me products with low stock."
+            ],
+            "setup_expect": [
+                "Products"
+            ],
+            "message": "What about their prices?",
+            "expect": [
+                {
+                    "intent": "Products",
+                    "target": [
+                        "products:*",
+                        "product:*"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "seen-two-questions-orders-stock",
+            "group": "seen",
+            "category": "multi",
+            "message": "How many orders did I get last month, and which products are low in stock?",
+            "expect": [
+                {
+                    "intent": "OrderStats"
+                },
+                {
+                    "intent": "Products"
+                }
+            ]
+        },
+        {
+            "id": "seen-two-questions-orders-policy",
+            "group": "seen",
+            "category": "multi",
+            "message": "how many orders today and what is my refund policy",
+            "expect": [
+                {
+                    "intent": "OrderStats"
+                },
+                {
+                    "intent": "Policies",
+                    "target": "policy:REFUND_POLICY"
+                }
+            ]
+        },
+        {
+            "id": "seen-two-questions-policy-name",
+            "group": "seen",
+            "category": "multi",
+            "message": "what is my refund policy and what is my store name",
+            "expect": [
+                {
+                    "intent": "Policies",
+                    "target": "policy:REFUND_POLICY"
+                },
+                {
+                    "intent": "StoreDetails"
+                }
+            ]
+        },
+        {
+            "id": "seen-speed-up-checkout",
+            "group": "seen",
+            "category": "how_to",
+            "message": "how do I speed up my checkout page",
+            "expect": [
+                {
+                    "intent": "HowTo",
+                    "target": "unsure"
+                }
+            ]
+        },
+        {
+            "id": "seen-topic-change-policy",
+            "group": "seen",
+            "category": "context",
+            "setup": [
+                "how to create order"
+            ],
+            "setup_expect": [
+                "HowTo"
+            ],
+            "message": "what is my refund policy then",
+            "expect": [
+                {
+                    "intent": "Policies",
+                    "target": "policy:REFUND_POLICY"
+                }
+            ]
+        },
+        {
+            "id": "seen-topic-change-cancel",
+            "group": "seen",
+            "category": "context",
+            "setup": [
+                "how to create order"
+            ],
+            "setup_expect": [
+                "HowTo"
+            ],
+            "message": "how do i cancel an order then",
+            "expect": [
+                {
+                    "intent": "HowTo",
+                    "target": "guide:cancel-order"
+                }
+            ]
+        },
+        {
+            "id": "seen-hello",
+            "group": "seen",
+            "category": "other",
+            "message": "hello",
+            "expect": [
+                {
+                    "intent": "Other"
+                }
+            ]
+        },
+        {
+            "id": "seen-implicit-two-questions",
+            "group": "seen",
+            "category": "multi",
+            "message": "orders and low stock products from last month",
+            "expect": [
+                {
+                    "intent": "OrderStats"
+                },
+                {
+                    "intent": "Products"
+                }
+            ],
+            "known_gap": true,
+            "note": "No joining word between the two asks."
+        },
+        {
+            "id": "howto-money-back",
+            "group": "fresh",
+            "category": "how_to",
+            "message": "how can i give a customer their money back",
+            "expect": [
+                {
+                    "intent": "HowTo",
+                    "target": "guide:refund-order"
+                }
+            ]
+        },
+        {
+            "id": "howto-black-friday",
+            "group": "fresh",
+            "category": "how_to",
+            "message": "i need to put 20% off on everything for black friday",
+            "expect": [
+                {
+                    "intent": "HowTo",
+                    "target": "guide:create-discount"
+                }
+            ]
+        },
+        {
+            "id": "howto-shipping-charge",
+            "group": "fresh",
+            "category": "how_to",
+            "message": "where do i change how much i charge for shipping",
+            "expect": [
+                {
+                    "intent": "HowTo",
+                    "target": "guide:shipping-settings"
+                }
+            ]
+        },
+        {
+            "id": "howto-print-label",
+            "group": "fresh",
+            "category": "how_to",
+            "message": "my printer is ready, how do i print the shipping label for an order",
+            "expect": [
+                {
+                    "intent": "HowTo",
+                    "target": [
+                        "guide:buy-shipping-label",
+                        "guide:print-packing-slips"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "howto-staff-access",
+            "group": "fresh",
+            "category": "how_to",
+            "message": "can my employee get access to orders but not to my payouts",
+            "expect": [
+                {
+                    "intent": "HowTo",
+                    "target": [
+                        "guide:staff-accounts",
+                        "guide:manage-staff-users"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "howto-cancel-no-number",
+            "group": "fresh",
+            "category": "how_to",
+            "message": "a customer wants to cancel their order, how do i do that",
+            "expect": [
+                {
+                    "intent": "HowTo",
+                    "target": "guide:cancel-order"
+                }
+            ]
+        },
+        {
+            "id": "howto-cash-paid",
+            "group": "fresh",
+            "category": "how_to",
+            "message": "a customer paid me cash, how do i mark the order paid",
+            "expect": [
+                {
+                    "intent": "HowTo",
+                    "target": [
+                        "guide:mark-order-paid",
+                        "guide:draft-order-collect-payment"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "howto-orders-excel",
+            "group": "fresh",
+            "category": "how_to",
+            "message": "i want all my orders in excel",
+            "expect": [
+                {
+                    "intent": "HowTo",
+                    "target": "guide:export-orders"
+                }
+            ]
+        },
+        {
+            "id": "howto-sell-gift-cards",
+            "group": "fresh",
+            "category": "how_to",
+            "message": "how do i sell gift cards",
+            "expect": [
+                {
+                    "intent": "HowTo",
+                    "target": "guide:gift-card-product"
+                }
+            ]
+        },
+        {
+            "id": "howto-hide-product",
+            "group": "fresh",
+            "category": "how_to",
+            "message": "temporarily hide a product without deleting it",
+            "expect": [
+                {
+                    "intent": "HowTo",
+                    "target": [
+                        "guide:product-status",
+                        "guide:archive-product"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "howto-swap-size",
+            "group": "fresh",
+            "category": "how_to",
+            "message": "customer wants to swap the size of the hoodie he bought",
+            "expect": [
+                {
+                    "intent": "HowTo",
+                    "target": "guide:create-return-exchange"
+                }
+            ]
+        },
+        {
+            "id": "howto-add-sizes",
+            "group": "fresh",
+            "category": "how_to",
+            "message": "how to add sizes to a product",
+            "expect": [
+                {
+                    "intent": "HowTo",
+                    "target": "guide:product-variants"
+                }
+            ]
+        },
+        {
+            "id": "howto-spreadsheet-upload",
+            "group": "fresh",
+            "category": "how_to",
+            "message": "upload products from a spreadsheet",
+            "expect": [
+                {
+                    "intent": "HowTo",
+                    "target": "guide:import-products-csv"
+                }
+            ]
+        },
+        {
+            "id": "howto-own-domain",
+            "group": "fresh",
+            "category": "how_to",
+            "message": "how do i connect my own domain",
+            "expect": [
+                {
+                    "intent": "HowTo",
+                    "target": [
+                        "guide:domains",
+                        "guide:buy-domain"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "howto-when-paid",
+            "group": "fresh",
+            "category": "how_to",
+            "message": "where can i see when shopify pays me",
+            "expect": [
+                {
+                    "intent": [
+                        "HowTo",
+                        "ExplainPage"
+                    ],
+                    "target": "guide:payouts"
+                }
+            ]
+        },
+        {
+            "id": "howto-local-pickup",
+            "group": "fresh",
+            "category": "how_to",
+            "message": "set up local pickup at my shop",
+            "expect": [
+                {
+                    "intent": "HowTo",
+                    "target": "guide:local-pickup"
+                }
+            ]
+        },
+        {
+            "id": "howto-theme-colours",
+            "group": "fresh",
+            "category": "how_to",
+            "message": "how do i change the theme colours",
+            "expect": [
+                {
+                    "intent": "HowTo",
+                    "target": "guide:theme-editor"
+                }
+            ]
+        },
+        {
+            "id": "howto-password-mode",
+            "group": "fresh",
+            "category": "how_to",
+            "message": "put my store in password mode while i'm building it",
+            "expect": [
+                {
+                    "intent": "HowTo",
+                    "target": "guide:online-store-preferences"
+                }
+            ]
+        },
+        {
+            "id": "howto-size-chart-page",
+            "group": "fresh",
+            "category": "how_to",
+            "message": "how do i add a size chart page",
+            "expect": [
+                {
+                    "intent": "HowTo",
+                    "target": "guide:online-store-pages"
+                }
+            ]
+        },
+        {
+            "id": "howto-hold-shipping",
+            "group": "fresh",
+            "category": "how_to",
+            "message": "how do i stop an order from being shipped for now",
+            "expect": [
+                {
+                    "intent": "HowTo",
+                    "target": "guide:hold-fulfillment"
+                }
+            ]
+        },
+        {
+            "id": "howto-order-note",
+            "group": "fresh",
+            "category": "how_to",
+            "message": "how do i add a note on an order",
+            "expect": [
+                {
+                    "intent": "HowTo",
+                    "target": "guide:order-notes-timeline"
+                }
+            ]
+        },
+        {
+            "id": "howto-fraud-check",
+            "group": "fresh",
+            "category": "how_to",
+            "message": "is this order a fraud, where do i check",
+            "expect": [
+                {
+                    "intent": "HowTo",
+                    "target": "guide:fraud-analysis"
+                }
+            ]
+        },
+        {
+            "id": "page-analytics",
+            "group": "fresh",
+            "category": "explain_page",
+            "message": "what is the analytics page for",
+            "expect": [
+                {
+                    "intent": "ExplainPage",
+                    "target": [
+                        "guide:analytics",
+                        "guide:analytics-dashboard-customize"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "page-abandoned-checkouts",
+            "group": "fresh",
+            "category": "explain_page",
+            "message": "what does abandoned checkouts mean",
+            "expect": [
+                {
+                    "intent": [
+                        "ExplainPage",
+                        "HowTo"
+                    ],
+                    "target": "guide:abandoned-checkouts"
+                }
+            ]
+        },
+        {
+            "id": "page-draft-orders",
+            "group": "fresh",
+            "category": "explain_page",
+            "message": "what is draft orders",
+            "expect": [
+                {
+                    "intent": "ExplainPage",
+                    "target": "guide:manage-draft-orders"
+                }
+            ]
+        },
+        {
+            "id": "page-markets",
+            "group": "fresh",
+            "category": "explain_page",
+            "message": "explain the markets section",
+            "expect": [
+                {
+                    "intent": "ExplainPage",
+                    "target": "guide:markets"
+                }
+            ]
+        },
+        {
+            "id": "page-this-page-no-context",
+            "group": "fresh",
+            "category": "explain_page",
+            "message": "what is this page",
+            "expect": [
+                {
+                    "intent": "ExplainPage",
+                    "target": "ask:PageName"
+                }
+            ]
+        },
+        {
+            "id": "page-inventory-here",
+            "group": "fresh",
+            "category": "explain_page",
+            "message": "im on the inventory page, what can i do here",
+            "expect": [
+                {
+                    "intent": "ExplainPage",
+                    "target": [
+                        "guide:view-inventory",
+                        "guide:adjust-inventory"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "page-capital",
+            "group": "fresh",
+            "category": "explain_page",
+            "message": "whats shopify capital",
+            "expect": [
+                {
+                    "intent": "ExplainPage",
+                    "target": "guide:shopify-capital"
+                }
+            ]
+        },
+        {
+            "id": "page-agentic",
+            "group": "fresh",
+            "category": "explain_page",
+            "message": "what is the agentic thing in my sidebar",
+            "expect": [
+                {
+                    "intent": "ExplainPage",
+                    "target": "guide:agentic-storefronts"
+                }
+            ]
+        },
+        {
+            "id": "page-metafields",
+            "group": "fresh",
+            "category": "explain_page",
+            "message": "what is metafields",
+            "expect": [
+                {
+                    "intent": "ExplainPage",
+                    "target": "guide:custom-data-metafields"
+                }
+            ]
+        },
+        {
+            "id": "order-hash-number",
+            "group": "fresh",
+            "category": "find_order",
+            "message": "where is order #1042",
+            "expect": [
+                {
+                    "intent": "FindOrder",
+                    "target": "order:1042"
+                }
+            ]
+        },
+        {
+            "id": "order-status-of",
+            "group": "fresh",
+            "category": "find_order",
+            "message": "status of 1055",
+            "expect": [
+                {
+                    "intent": "FindOrder",
+                    "target": "order:1055"
+                }
+            ]
+        },
+        {
+            "id": "order-last",
+            "group": "fresh",
+            "category": "find_order",
+            "message": "show me my last order",
+            "expect": [
+                {
+                    "intent": "FindOrder",
+                    "target": "order:1058"
+                }
+            ]
+        },
+        {
+            "id": "order-shipped-yet",
+            "group": "fresh",
+            "category": "find_order",
+            "message": "did 1056 ship yet",
+            "expect": [
+                {
+                    "intent": "FindOrder",
+                    "target": "order:1056"
+                }
+            ]
+        },
+        {
+            "id": "order-which",
+            "group": "fresh",
+            "category": "find_order",
+            "message": "look up an order for me",
+            "expect": [
+                {
+                    "intent": "FindOrder",
+                    "target": "ask:OrderNumber"
+                }
+            ]
+        },
+        {
+            "id": "order-customer-asking",
+            "group": "fresh",
+            "category": "find_order",
+            "message": "customer is asking about #1057 is it paid",
+            "expect": [
+                {
+                    "intent": "FindOrder",
+                    "target": "order:1057"
+                }
+            ]
+        },
+        {
+            "id": "order-typo",
+            "group": "fresh",
+            "category": "find_order",
+            "message": "ordr 1058 status",
+            "expect": [
+                {
+                    "intent": "FindOrder",
+                    "target": "order:1058"
+                }
+            ]
+        },
+        {
+            "id": "order-tracking",
+            "group": "fresh",
+            "category": "find_order",
+            "message": "whats the tracking number for 1042",
+            "expect": [
+                {
+                    "intent": "FindOrder",
+                    "target": "order:1042"
+                }
+            ]
+        },
+        {
+            "id": "stats-today",
+            "group": "fresh",
+            "category": "order_stats",
+            "message": "how many orders today",
+            "expect": [
+                {
+                    "intent": "OrderStats"
+                }
+            ]
+        },
+        {
+            "id": "stats-yesterday-typos",
+            "group": "fresh",
+            "category": "order_stats",
+            "message": "hw many oders yestrday",
+            "expect": [
+                {
+                    "intent": "OrderStats"
+                }
+            ]
+        },
+        {
+            "id": "stats-last-week",
+            "group": "fresh",
+            "category": "order_stats",
+            "message": "orders last week?",
+            "expect": [
+                {
+                    "intent": "OrderStats"
+                }
+            ]
+        },
+        {
+            "id": "stats-list-7-days",
+            "group": "fresh",
+            "category": "order_stats",
+            "message": "list my orders from the last 7 days",
+            "expect": [
+                {
+                    "intent": "OrderStats"
+                }
+            ]
+        },
+        {
+            "id": "stats-september",
+            "group": "fresh",
+            "category": "order_stats",
+            "message": "how many orders in september",
+            "expect": [
+                {
+                    "intent": "OrderStats"
+                }
+            ]
+        },
+        {
+            "id": "stats-no-period",
+            "group": "fresh",
+            "category": "order_stats",
+            "message": "how many orders have i got",
+            "expect": [
+                {
+                    "intent": "OrderStats"
+                }
+            ]
+        },
+        {
+            "id": "stats-revenue",
+            "group": "fresh",
+            "category": "order_stats",
+            "message": "how much money did i make this month",
+            "expect": [
+                {
+                    "intent": "OrderStats",
+                    "target": "revenue"
+                }
+            ]
+        },
+        {
+            "id": "stats-since-yesterday",
+            "group": "fresh",
+            "category": "order_stats",
+            "message": "any new orders since yesterday",
+            "expect": [
+                {
+                    "intent": "OrderStats"
+                }
+            ]
+        },
+        {
+            "id": "stats-unfulfilled",
+            "group": "fresh",
+            "category": "order_stats",
+            "message": "how many unfulfilled orders do i have",
+            "expect": [
+                {
+                    "intent": "OrderStats",
+                    "target": "unfulfilled_count"
+                }
+            ],
+            "known_gap": true,
+            "note": "No filter by fulfillment status."
+        },
+        {
+            "id": "product-out-of-stock",
+            "group": "fresh",
+            "category": "products",
+            "message": "what's out of stock",
+            "expect": [
+                {
+                    "intent": "Products"
+                }
+            ]
+        },
+        {
+            "id": "product-price",
+            "group": "fresh",
+            "category": "products",
+            "message": "how much is the denim jacket",
+            "expect": [
+                {
+                    "intent": "Products",
+                    "target": "product:Denim Jacket"
+                }
+            ]
+        },
+        {
+            "id": "product-size-left",
+            "group": "fresh",
+            "category": "products",
+            "message": "do i still have the blue hoodie in large",
+            "expect": [
+                {
+                    "intent": "Products",
+                    "target": "product:Blue Hoodie"
+                }
+            ]
+        },
+        {
+            "id": "product-count",
+            "group": "fresh",
+            "category": "products",
+            "message": "how many products do i have",
+            "expect": [
+                {
+                    "intent": "Products"
+                }
+            ]
+        },
+        {
+            "id": "product-beanie-stock",
+            "group": "fresh",
+            "category": "products",
+            "message": "beanie stock?",
+            "expect": [
+                {
+                    "intent": "Products",
+                    "target": "product:Beanie"
+                }
+            ]
+        },
+        {
+            "id": "product-sizes-left",
+            "group": "fresh",
+            "category": "products",
+            "message": "what sizes of the denim jacket are left",
+            "expect": [
+                {
+                    "intent": "Products",
+                    "target": "product:Denim Jacket"
+                }
+            ]
+        },
+        {
+            "id": "product-low-typo",
+            "group": "fresh",
+            "category": "products",
+            "message": "lowstock items plz",
+            "expect": [
+                {
+                    "intent": "Products"
+                }
+            ]
+        },
+        {
+            "id": "product-what-do-i-sell",
+            "group": "fresh",
+            "category": "products",
+            "message": "what do i sell",
+            "expect": [
+                {
+                    "intent": "Products"
+                }
+            ]
+        },
+        {
+            "id": "product-belt-live",
+            "group": "fresh",
+            "category": "products",
+            "message": "is the leather belt live on my store",
+            "expect": [
+                {
+                    "intent": "Products",
+                    "target": "product:Leather Belt"
+                }
+            ]
+        },
+        {
+            "id": "policy-refund",
+            "group": "fresh",
+            "category": "policies",
+            "message": "what is my refund policy",
+            "expect": [
+                {
+                    "intent": "Policies",
+                    "target": "policy:REFUND_POLICY"
+                }
+            ]
+        },
+        {
+            "id": "policy-worn-items",
+            "group": "fresh",
+            "category": "policies",
+            "message": "can customers return worn items",
+            "expect": [
+                {
+                    "intent": "Policies",
+                    "target": "policy:REFUND_POLICY"
+                }
+            ]
+        },
+        {
+            "id": "policy-refund-time",
+            "group": "fresh",
+            "category": "policies",
+            "message": "how long do refunds take",
+            "expect": [
+                {
+                    "intent": "Policies",
+                    "target": "policy:REFUND_POLICY"
+                }
+            ]
+        },
+        {
+            "id": "policy-shipping",
+            "group": "fresh",
+            "category": "policies",
+            "message": "whats my shipping policy say",
+            "expect": [
+                {
+                    "intent": "Policies",
+                    "target": "policy:SHIPPING_POLICY"
+                }
+            ]
+        },
+        {
+            "id": "policy-typo",
+            "group": "fresh",
+            "category": "policies",
+            "message": "refnd policy?",
+            "expect": [
+                {
+                    "intent": "Policies",
+                    "target": "policy:REFUND_POLICY"
+                }
+            ]
+        },
+        {
+            "id": "policy-ship-speed",
+            "group": "fresh",
+            "category": "policies",
+            "message": "how fast do we ship orders",
+            "expect": [
+                {
+                    "intent": "Policies",
+                    "target": "policy:SHIPPING_POLICY"
+                }
+            ]
+        },
+        {
+            "id": "policy-privacy",
+            "group": "fresh",
+            "category": "policies",
+            "message": "do i have a privacy policy",
+            "expect": [
+                {
+                    "intent": "Policies",
+                    "target": "policy:PRIVACY_POLICY"
+                }
+            ]
+        },
+        {
+            "id": "details-plan-on",
+            "group": "fresh",
+            "category": "store_details",
+            "message": "what plan am i on",
+            "expect": [
+                {
+                    "intent": "StoreDetails"
+                }
+            ]
+        },
+        {
+            "id": "details-my-plan",
+            "group": "fresh",
+            "category": "store_details",
+            "message": "what is my plan",
+            "expect": [
+                {
+                    "intent": "StoreDetails"
+                }
+            ]
+        },
+        {
+            "id": "details-currency",
+            "group": "fresh",
+            "category": "store_details",
+            "message": "which currency is my store in",
+            "expect": [
+                {
+                    "intent": "StoreDetails"
+                }
+            ]
+        },
+        {
+            "id": "details-customer-email",
+            "group": "fresh",
+            "category": "store_details",
+            "message": "what email do customers see",
+            "expect": [
+                {
+                    "intent": "StoreDetails"
+                }
+            ]
+        },
+        {
+            "id": "details-domain",
+            "group": "fresh",
+            "category": "store_details",
+            "message": "what's my store's domain",
+            "expect": [
+                {
+                    "intent": "StoreDetails"
+                }
+            ]
+        },
+        {
+            "id": "details-timezone",
+            "group": "fresh",
+            "category": "store_details",
+            "message": "what timezone is my store set to",
+            "expect": [
+                {
+                    "intent": "StoreDetails"
+                }
+            ]
+        },
+        {
+            "id": "discount-active-codes",
+            "group": "fresh",
+            "category": "discounts",
+            "message": "which discount codes are active",
+            "expect": [
+                {
+                    "intent": "DiscountsAndCollections"
+                }
+            ]
+        },
+        {
+            "id": "discount-welcome10",
+            "group": "fresh",
+            "category": "discounts",
+            "message": "is WELCOME10 still working",
+            "expect": [
+                {
+                    "intent": "DiscountsAndCollections"
+                }
+            ]
+        },
+        {
+            "id": "discount-collections",
+            "group": "fresh",
+            "category": "discounts",
+            "message": "what collections do i have",
+            "expect": [
+                {
+                    "intent": "DiscountsAndCollections"
+                }
+            ]
+        },
+        {
+            "id": "discount-sales-running",
+            "group": "fresh",
+            "category": "discounts",
+            "message": "am i running any sales right now",
+            "expect": [
+                {
+                    "intent": "DiscountsAndCollections"
+                }
+            ]
+        },
+        {
+            "id": "discount-free-shipping",
+            "group": "fresh",
+            "category": "discounts",
+            "message": "do i have free shipping on",
+            "expect": [
+                {
+                    "intent": [
+                        "DiscountsAndCollections",
+                        "Policies"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "other-thanks",
+            "group": "fresh",
+            "category": "other",
+            "message": "thanks!",
+            "expect": [
+                {
+                    "intent": "Other"
+                }
+            ]
+        },
+        {
+            "id": "other-what-can-you-do",
+            "group": "fresh",
+            "category": "other",
+            "message": "what can you do",
+            "expect": [
+                {
+                    "intent": "Other"
+                }
+            ]
+        },
+        {
+            "id": "other-weather",
+            "group": "fresh",
+            "category": "other",
+            "message": "what's the weather in lahore",
+            "expect": [
+                {
+                    "intent": "Other",
+                    "target": "out_of_scope"
+                }
+            ]
+        },
+        {
+            "id": "other-caption",
+            "group": "fresh",
+            "category": "other",
+            "message": "write me an instagram caption for my hoodie",
+            "expect": [
+                {
+                    "intent": "Other",
+                    "target": "out_of_scope"
+                }
+            ]
+        },
+        {
+            "id": "other-change-price",
+            "group": "fresh",
+            "category": "other",
+            "message": "can you change the beanie price to 25",
+            "expect": [
+                {
+                    "intent": [
+                        "HowTo",
+                        "Other"
+                    ],
+                    "target": [
+                        "guide:edit-product",
+                        "out_of_scope"
+                    ]
+                }
+            ],
+            "note": "The app is read-only; showing how to do it is the useful answer."
+        },
+        {
+            "id": "other-who-are-you",
+            "group": "fresh",
+            "category": "other",
+            "message": "who are you",
+            "expect": [
+                {
+                    "intent": "Other"
+                }
+            ]
+        },
+        {
+            "id": "multi-discounts-shipping",
+            "group": "fresh",
+            "category": "multi",
+            "message": "which discounts are active? also what's my shipping policy",
+            "expect": [
+                {
+                    "intent": "DiscountsAndCollections"
+                },
+                {
+                    "intent": "Policies",
+                    "target": "policy:SHIPPING_POLICY"
+                }
+            ]
+        },
+        {
+            "id": "multi-order-refund",
+            "group": "fresh",
+            "category": "multi",
+            "message": "show order 1042 also how do i refund it",
+            "expect": [
+                {
+                    "intent": "FindOrder",
+                    "target": "order:1042"
+                },
+                {
+                    "intent": "HowTo",
+                    "target": "guide:refund-order"
+                }
+            ]
+        },
+        {
+            "id": "multi-plan-upgrade",
+            "group": "fresh",
+            "category": "multi",
+            "message": "what plan am i on and how do i upgrade it",
+            "expect": [
+                {
+                    "intent": "StoreDetails"
+                },
+                {
+                    "intent": "HowTo",
+                    "target": "guide:store-plan"
+                }
+            ]
+        },
+        {
+            "id": "multi-products-out-of-stock",
+            "group": "fresh",
+            "category": "multi",
+            "message": "how many products do i have and how many are out of stock",
+            "expect": [
+                {
+                    "intent": "Products"
+                },
+                {
+                    "intent": "Products"
+                }
+            ]
+        },
+        {
+            "id": "multi-order-and-today",
+            "group": "fresh",
+            "category": "multi",
+            "message": "status of 1055, and how many orders came in today",
+            "expect": [
+                {
+                    "intent": "FindOrder",
+                    "target": "order:1055"
+                },
+                {
+                    "intent": "OrderStats"
+                }
+            ]
+        },
+        {
+            "id": "multi-implicit",
+            "group": "fresh",
+            "category": "multi",
+            "message": "low stock and today's orders",
+            "expect": [
+                {
+                    "intent": "Products"
+                },
+                {
+                    "intent": "OrderStats"
+                }
+            ],
+            "known_gap": true,
+            "note": "No question words to split on."
+        },
+        {
+            "id": "ctx-delivered",
+            "group": "fresh",
+            "category": "context",
+            "setup": [
+                "where is order 1042"
+            ],
+            "setup_expect": [
+                "FindOrder"
+            ],
+            "message": "has it been delivered?",
+            "expect": [
+                {
+                    "intent": "FindOrder",
+                    "target": "order:1042"
+                }
+            ]
+        },
+        {
+            "id": "ctx-and-today",
+            "group": "fresh",
+            "category": "context",
+            "setup": [
+                "how many orders yesterday"
+            ],
+            "setup_expect": [
+                "OrderStats"
+            ],
+            "message": "and today?",
+            "expect": [
+                {
+                    "intent": "OrderStats"
+                }
+            ]
+        },
+        {
+            "id": "ctx-and-shipping",
+            "group": "fresh",
+            "category": "context",
+            "setup": [
+                "what is my refund policy"
+            ],
+            "setup_expect": [
+                "Policies"
+            ],
+            "message": "and shipping?",
+            "expect": [
+                {
+                    "intent": "Policies",
+                    "target": "policy:SHIPPING_POLICY"
+                }
+            ]
+        },
+        {
+            "id": "ctx-and-cancel",
+            "group": "fresh",
+            "category": "context",
+            "setup": [
+                "how do i refund an order"
+            ],
+            "setup_expect": [
+                "HowTo"
+            ],
+            "message": "ok and how do i cancel one",
+            "expect": [
+                {
+                    "intent": "HowTo",
+                    "target": "guide:cancel-order"
+                }
+            ]
+        },
+        {
+            "id": "ctx-and-the-hoodie",
+            "group": "fresh",
+            "category": "context",
+            "setup": [
+                "how much is the denim jacket"
+            ],
+            "setup_expect": [
+                "Products"
+            ],
+            "message": "and the hoodie?",
+            "expect": [
+                {
+                    "intent": "Products",
+                    "target": "product:Blue Hoodie"
+                }
+            ]
+        },
+        {
+            "id": "ctx-order-number-answer",
+            "group": "fresh",
+            "category": "context",
+            "setup": [
+                "check an order status"
+            ],
+            "setup_expect": [
+                "FindOrder"
+            ],
+            "message": "1055",
+            "expect": [
+                {
+                    "intent": "FindOrder",
+                    "target": "order:1055"
+                }
+            ]
+        },
+        {
+            "id": "ctx-dates-answer",
+            "group": "fresh",
+            "category": "context",
+            "setup": [
+                "how many orders"
+            ],
+            "setup_expect": [
+                "OrderStats"
+            ],
+            "message": "last week",
+            "expect": [
+                {
+                    "intent": "OrderStats"
+                }
+            ]
+        },
+        {
+            "id": "ctx-restock-them",
+            "group": "fresh",
+            "category": "context",
+            "setup": [
+                "which products are low on stock"
+            ],
+            "setup_expect": [
+                "Products"
+            ],
+            "message": "how do i restock them",
+            "expect": [
+                {
+                    "intent": "HowTo",
+                    "target": [
+                        "guide:adjust-inventory",
+                        "guide:purchase-orders"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "ctx-payouts-there",
+            "group": "fresh",
+            "category": "context",
+            "setup": [
+                "what is the finance page"
+            ],
+            "setup_expect": [
+                "ExplainPage"
+            ],
+            "message": "where do i see my payouts there",
+            "expect": [
+                {
+                    "intent": [
+                        "HowTo",
+                        "ExplainPage"
+                    ],
+                    "target": "guide:payouts"
+                }
+            ]
+        },
+        {
+            "id": "ctx-discount-one-collection",
+            "group": "fresh",
+            "category": "context",
+            "setup": [
+                "how do i create a discount"
+            ],
+            "setup_expect": [
+                "HowTo"
+            ],
+            "message": "can it be only for one collection?",
+            "expect": [
+                {
+                    "intent": "HowTo",
+                    "target": "guide:create-discount"
+                }
+            ]
+        },
+        {
+            "id": "ctx-order-before",
+            "group": "fresh",
+            "category": "context",
+            "setup": [
+                "show me my last order"
+            ],
+            "setup_expect": [
+                "FindOrder"
+            ],
+            "message": "and the one before?",
+            "expect": [
+                {
+                    "intent": "FindOrder",
+                    "target": "order:1057"
+                }
+            ],
+            "known_gap": true,
+            "note": "Needs the order from the last answer."
+        },
+        {
+            "id": "ctx-page-memory",
+            "group": "fresh",
+            "category": "context",
+            "setup": [
+                "what is the inventory page"
+            ],
+            "setup_expect": [
+                "ExplainPage"
+            ],
+            "message": "what is this page",
+            "expect": [
+                {
+                    "intent": "ExplainPage",
+                    "target": [
+                        "guide:view-inventory",
+                        "guide:adjust-inventory"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "owner-return-policy",
+            "group": "owner",
+            "category": "policies",
+            "message": "What's my store's return policy?",
+            "expect": [
+                {
+                    "intent": "Policies",
+                    "target": "policy:REFUND_POLICY"
+                }
+            ]
+        },
+        {
+            "id": "owner-cancel-howto",
+            "group": "owner",
+            "category": "how_to",
+            "message": "How do I cancel an order in Shopify?",
+            "expect": [
+                {
+                    "intent": "HowTo",
+                    "target": "guide:cancel-order"
+                }
+            ]
+        },
+        {
+            "id": "owner-customer-cancel-handle",
+            "group": "owner",
+            "category": "how_to",
+            "message": "A customer wants to cancel their order. How should I handle that?",
+            "expect": [
+                {
+                    "intent": "HowTo",
+                    "target": "guide:cancel-order"
+                }
+            ]
+        },
+        {
+            "id": "owner-issue-refund",
+            "group": "owner",
+            "category": "how_to",
+            "message": "How can I issue a refund?",
+            "expect": [
+                {
+                    "intent": "HowTo",
+                    "target": "guide:refund-order"
+                }
+            ]
+        },
+        {
+            "id": "owner-mark-fulfilled",
+            "group": "owner",
+            "category": "how_to",
+            "message": "How do I mark an order as fulfilled?",
+            "expect": [
+                {
+                    "intent": "HowTo",
+                    "target": "guide:fulfill-order"
+                }
+            ]
+        },
+        {
+            "id": "owner-partial-fulfill",
+            "group": "owner",
+            "category": "how_to",
+            "message": "How do I partially fulfill an order?",
+            "expect": [
+                {
+                    "intent": "HowTo",
+                    "target": "guide:fulfill-order"
+                }
+            ]
+        },
+        {
+            "id": "owner-add-tracking",
+            "group": "owner",
+            "category": "how_to",
+            "message": "How can I add tracking information to an order?",
+            "expect": [
+                {
+                    "intent": "HowTo",
+                    "target": "guide:fulfill-order"
+                }
+            ]
+        },
+        {
+            "id": "owner-packing-slip",
+            "group": "owner",
+            "category": "how_to",
+            "message": "How do I print an order's packing slip?",
+            "expect": [
+                {
+                    "intent": "HowTo",
+                    "target": "guide:print-packing-slips"
+                }
+            ]
+        },
+        {
+            "id": "owner-archive",
+            "group": "owner",
+            "category": "how_to",
+            "message": "How do I archive an order?",
+            "expect": [
+                {
+                    "intent": "HowTo",
+                    "target": "guide:archive-order"
+                }
+            ]
+        },
+        {
+            "id": "owner-edit-address",
+            "group": "owner",
+            "category": "how_to",
+            "message": "How do I edit a customer's shipping address?",
+            "expect": [
+                {
+                    "intent": "HowTo",
+                    "target": [
+                        "guide:edit-customer",
+                        "guide:edit-order"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "owner-resend-confirmation",
+            "group": "owner",
+            "category": "how_to",
+            "message": "How can I resend an order confirmation email?",
+            "expect": [
+                {
+                    "intent": "HowTo",
+                    "target": "unsure"
+                }
+            ],
+            "note": "No guide covers resending; the notification-template guide is the wrong answer."
+        },
+        {
+            "id": "owner-draft-process",
+            "group": "owner",
+            "category": "how_to",
+            "message": "What's the process for creating a draft order?",
+            "expect": [
+                {
+                    "intent": "HowTo",
+                    "target": [
+                        "guide:manage-draft-orders",
+                        "guide:create-order"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "owner-capture",
+            "group": "owner",
+            "category": "how_to",
+            "message": "How do I capture a payment manually?",
+            "expect": [
+                {
+                    "intent": "HowTo",
+                    "target": "guide:capture-payment"
+                }
+            ]
+        },
+        {
+            "id": "owner-mark-paid",
+            "group": "owner",
+            "category": "how_to",
+            "message": "How can I mark an order as paid?",
+            "expect": [
+                {
+                    "intent": "HowTo",
+                    "target": [
+                        "guide:mark-order-paid",
+                        "guide:draft-order-collect-payment"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "owner-never-arrived",
+            "group": "owner",
+            "category": "how_to",
+            "message": "A customer says their package never arrived. What should I do?",
+            "expect": [
+                {
+                    "intent": [
+                        "HowTo",
+                        "Other"
+                    ],
+                    "target": [
+                        "unsure",
+                        "out_of_scope"
+                    ]
+                }
+            ],
+            "note": "No guide: must not invent one."
+        },
+        {
+            "id": "owner-returned",
+            "group": "owner",
+            "category": "how_to",
+            "message": "How do I handle an order that has been returned?",
+            "expect": [
+                {
+                    "intent": "HowTo",
+                    "target": "guide:create-return-exchange"
+                }
+            ]
+        },
+        {
+            "id": "owner-partial-refund",
+            "group": "owner",
+            "category": "how_to",
+            "message": "Can you explain how to partially refund an order?",
+            "expect": [
+                {
+                    "intent": "HowTo",
+                    "target": "guide:refund-order"
+                }
+            ]
+        },
+        {
+            "id": "owner-shipping-method",
+            "group": "owner",
+            "category": "how_to",
+            "message": "Where do I change an order's shipping method?",
+            "expect": [
+                {
+                    "intent": "HowTo",
+                    "target": [
+                        "guide:edit-order",
+                        "unsure"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "owner-order-note",
+            "group": "owner",
+            "category": "how_to",
+            "message": "How do I add a note to an order?",
+            "expect": [
+                {
+                    "intent": "HowTo",
+                    "target": "guide:order-notes-timeline"
+                }
+            ]
+        },
+        {
+            "id": "owner-cancel-after-fulfilled",
+            "group": "owner",
+            "category": "how_to",
+            "message": "Can I cancel an order after it has been fulfilled? How?",
+            "expect": [
+                {
+                    "intent": "HowTo",
+                    "target": "guide:cancel-order"
+                }
+            ]
+        },
+        {
+            "id": "owner-cancel-options",
+            "group": "owner",
+            "category": "how_to",
+            "message": "A customer changed their mind and wants to cancel. What are my options?",
+            "expect": [
+                {
+                    "intent": "HowTo",
+                    "target": "guide:cancel-order"
+                }
+            ]
+        },
+        {
+            "id": "owner-look-up",
+            "group": "owner",
+            "category": "find_order",
+            "message": "Look up an order for me.",
+            "expect": [
+                {
+                    "intent": "FindOrder",
+                    "target": "ask:OrderNumber"
+                }
+            ]
+        },
+        {
+            "id": "owner-find-hash",
+            "group": "owner",
+            "category": "find_order",
+            "message": "Can you find order #1055?",
+            "expect": [
+                {
+                    "intent": "FindOrder",
+                    "target": "order:1055"
+                }
+            ]
+        },
+        {
+            "id": "owner-status-of",
+            "group": "owner",
+            "category": "find_order",
+            "message": "Check the status of order 1056.",
+            "expect": [
+                {
+                    "intent": "FindOrder",
+                    "target": "order:1056"
+                }
+            ]
+        },
+        {
+            "id": "owner-leading-zeros",
+            "group": "owner",
+            "category": "find_order",
+            "message": "I need details for order number 001055.",
+            "expect": [
+                {
+                    "intent": "FindOrder",
+                    "target": "order:1055"
+                }
+            ]
+        },
+        {
+            "id": "owner-from-yesterday",
+            "group": "owner",
+            "category": "find_order",
+            "message": "Pull up the order from yesterday.",
+            "expect": [
+                {
+                    "intent": [
+                        "FindOrder",
+                        "OrderStats"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "owner-most-recent",
+            "group": "owner",
+            "category": "find_order",
+            "message": "Find the most recent order.",
+            "expect": [
+                {
+                    "intent": "FindOrder",
+                    "target": "order:1058"
+                }
+            ]
+        },
+        {
+            "id": "owner-last-placed",
+            "group": "owner",
+            "category": "find_order",
+            "message": "Show me the last order placed in my store.",
+            "expect": [
+                {
+                    "intent": "FindOrder",
+                    "target": "order:1058"
+                }
+            ]
+        },
+        {
+            "id": "owner-customer-name",
+            "group": "owner",
+            "category": "find_order",
+            "message": "Can you look up the order from customer Sarah?",
+            "expect": [
+                {
+                    "intent": "FindOrder",
+                    "target": "lookup_by_number_only"
+                }
+            ]
+        },
+        {
+            "id": "owner-customer-email",
+            "group": "owner",
+            "category": "find_order",
+            "message": "Find the order for john@example.com.",
+            "expect": [
+                {
+                    "intent": "FindOrder",
+                    "target": "lookup_by_number_only"
+                }
+            ]
+        },
+        {
+            "id": "owner-what-happened",
+            "group": "owner",
+            "category": "find_order",
+            "message": "What happened with order #1057?",
+            "expect": [
+                {
+                    "intent": "FindOrder",
+                    "target": "order:1057"
+                }
+            ]
+        },
+        {
+            "id": "owner-still-processing",
+            "group": "owner",
+            "category": "find_order",
+            "message": "Is order 1056 still processing?",
+            "expect": [
+                {
+                    "intent": "FindOrder",
+                    "target": "order:1056"
+                }
+            ]
+        },
+        {
+            "id": "owner-forgot-number",
+            "group": "owner",
+            "category": "find_order",
+            "message": "I forgot the order number. Can you help me locate it?",
+            "expect": [
+                {
+                    "intent": "FindOrder",
+                    "target": "lookup_by_number_only"
+                }
+            ]
+        },
+        {
+            "id": "owner-tracking-lookup",
+            "group": "owner",
+            "category": "find_order",
+            "message": "Find the order with tracking number ABC123.",
+            "expect": [
+                {
+                    "intent": "FindOrder",
+                    "target": "lookup_by_number_only"
+                }
+            ]
+        },
+        {
+            "id": "owner-contains",
+            "group": "owner",
+            "category": "find_order",
+            "message": "Can you check order 1057 and tell me what it contains?",
+            "expect": [
+                {
+                    "intent": "FindOrder",
+                    "target": "order:1057"
+                }
+            ]
+        },
+        {
+            "id": "owner-open-order",
+            "group": "owner",
+            "category": "find_order",
+            "message": "Open order number 1042 for me.",
+            "expect": [
+                {
+                    "intent": "FindOrder",
+                    "target": "order:1042"
+                }
+            ]
+        },
+        {
+            "id": "owner-this-morning",
+            "group": "owner",
+            "category": "find_order",
+            "message": "I need to review an order that was placed this morning.",
+            "expect": [
+                {
+                    "intent": [
+                        "FindOrder",
+                        "OrderStats"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "owner-that-order",
+            "group": "owner",
+            "category": "context",
+            "message": "What's the status of that order?",
+            "expect": [
+                {
+                    "intent": "FindOrder",
+                    "target": "order:1055"
+                }
+            ],
+            "setup": [
+                "Can you find order #1055?"
+            ],
+            "setup_expect": [
+                "FindOrder"
+            ]
+        },
+        {
+            "id": "owner-corrected-number",
+            "group": "owner",
+            "category": "find_order",
+            "message": "Can you find order 1055? Actually, I meant 1056.",
+            "expect": [
+                {
+                    "intent": "FindOrder",
+                    "target": "order:1056"
+                }
+            ]
+        },
+        {
+            "id": "owner-today",
+            "group": "owner",
+            "category": "order_stats",
+            "message": "How many orders did my store receive today?",
+            "expect": [
+                {
+                    "intent": "OrderStats"
+                }
+            ]
+        },
+        {
+            "id": "owner-last-month",
+            "group": "owner",
+            "category": "order_stats",
+            "message": "Count all orders from last month.",
+            "expect": [
+                {
+                    "intent": "OrderStats"
+                }
+            ]
+        },
+        {
+            "id": "owner-seven-days",
+            "group": "owner",
+            "category": "order_stats",
+            "message": "How many orders came in during the past seven days?",
+            "expect": [
+                {
+                    "intent": "OrderStats"
+                }
+            ]
+        },
+        {
+            "id": "owner-this-week-summary",
+            "group": "owner",
+            "category": "order_stats",
+            "message": "Give me a summary of orders from this week.",
+            "expect": [
+                {
+                    "intent": "OrderStats"
+                }
+            ]
+        },
+        {
+            "id": "owner-this-year",
+            "group": "owner",
+            "category": "order_stats",
+            "message": "How many orders have we received this year?",
+            "expect": [
+                {
+                    "intent": "OrderStats"
+                }
+            ]
+        },
+        {
+            "id": "owner-list-30-days",
+            "group": "owner",
+            "category": "order_stats",
+            "message": "Show me all orders from the last 30 days.",
+            "expect": [
+                {
+                    "intent": "OrderStats"
+                }
+            ]
+        },
+        {
+            "id": "owner-list-yesterday",
+            "group": "owner",
+            "category": "order_stats",
+            "message": "List every order from yesterday.",
+            "expect": [
+                {
+                    "intent": "OrderStats"
+                }
+            ]
+        },
+        {
+            "id": "owner-compare-weeks",
+            "group": "owner",
+            "category": "order_stats",
+            "message": "Compare this week's order count with last week's.",
+            "expect": [
+                {
+                    "intent": "OrderStats",
+                    "target": "order_comparison"
+                }
+            ]
+        },
+        {
+            "id": "owner-24-hours",
+            "group": "owner",
+            "category": "order_stats",
+            "message": "How many orders did we get in the last 24 hours?",
+            "expect": [
+                {
+                    "intent": "OrderStats"
+                }
+            ]
+        },
+        {
+            "id": "owner-since-midnight",
+            "group": "owner",
+            "category": "order_stats",
+            "message": "How many orders came in since midnight?",
+            "expect": [
+                {
+                    "intent": "OrderStats"
+                }
+            ]
+        },
+        {
+            "id": "owner-calendar-month",
+            "group": "owner",
+            "category": "order_stats",
+            "message": "Count orders from the previous calendar month, not the last 30 days.",
+            "expect": [
+                {
+                    "intent": "OrderStats"
+                }
+            ]
+        },
+        {
+            "id": "owner-sep-1-15",
+            "group": "owner",
+            "category": "order_stats",
+            "message": "How many orders were placed from September 1 through September 15?",
+            "expect": [
+                {
+                    "intent": "OrderStats"
+                }
+            ]
+        },
+        {
+            "id": "owner-90-days",
+            "group": "owner",
+            "category": "order_stats",
+            "message": "Give me the order count for the last 90 days.",
+            "expect": [
+                {
+                    "intent": "OrderStats"
+                }
+            ]
+        },
+        {
+            "id": "owner-older-60",
+            "group": "owner",
+            "category": "order_stats",
+            "message": "How many orders were placed more than 60 days ago?",
+            "expect": [
+                {
+                    "intent": "OrderStats",
+                    "target": "history_limit"
+                }
+            ]
+        },
+        {
+            "id": "owner-two-months",
+            "group": "owner",
+            "category": "order_stats",
+            "message": "Show me orders from the past two months.",
+            "expect": [
+                {
+                    "intent": "OrderStats"
+                }
+            ]
+        },
+        {
+            "id": "owner-today-and-yesterday",
+            "group": "owner",
+            "category": "multi",
+            "message": "How many orders came in today, and how many yesterday?",
+            "expect": [
+                {
+                    "intent": "OrderStats"
+                },
+                {
+                    "intent": "OrderStats"
+                }
+            ]
+        },
+        {
+            "id": "owner-more-this-week",
+            "group": "owner",
+            "category": "order_stats",
+            "message": "Were there more orders this week than last week?",
+            "expect": [
+                {
+                    "intent": "OrderStats",
+                    "target": "order_comparison"
+                }
+            ]
+        },
+        {
+            "id": "owner-average",
+            "group": "owner",
+            "category": "order_stats",
+            "message": "What's my average number of orders per day over the last 14 days?",
+            "expect": [
+                {
+                    "intent": "OrderStats",
+                    "target": "order_average"
+                }
+            ]
+        },
+        {
+            "id": "owner-corrected-period",
+            "group": "owner",
+            "category": "order_stats",
+            "message": "How many orders did I receive last month? I mean this month.",
+            "expect": [
+                {
+                    "intent": "OrderStats"
+                }
+            ]
+        }
+    ]
+}

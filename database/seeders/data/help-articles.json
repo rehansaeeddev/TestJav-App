@@ -1,0 +1,1092 @@
+[
+    {
+        "slug": "manage-draft-orders",
+        "title": "View, edit, or delete draft orders",
+        "admin_page": "Orders → Drafts",
+        "admin_path": "/draft_orders",
+        "page_summary": "The Drafts page lists orders you've started on behalf of customers but haven't turned into real orders yet. You can reopen a draft to change it, or remove drafts you no longer need. A draft becomes a regular order on the Orders page once payment is accepted.",
+        "steps": "1. In the Shopify admin, go to Orders → Drafts.\n2. Click the draft order you want to work on.\n3. To change it, update details such as products, customer, shipping, tags, or payment terms, then click Save.\n4. To remove it, click Delete draft order and confirm by clicking Delete draft order again in the dialog.\n5. Note: deleting a completed draft does not remove the order that was created from it, and drafts created on or after April 1, 2025 are removed automatically after a year without any edits.",
+        "keywords": "drafts, draft orders, draft list, delete draft, edit draft, saved orders, unfinished orders, quotes",
+        "source_url": "https://help.shopify.com/en/manual/fulfillment/managing-orders/create-orders/create-draft"
+    },
+    {
+        "slug": "abandoned-checkouts",
+        "title": "View and recover abandoned checkouts",
+        "admin_page": "Orders → Abandoned checkouts",
+        "admin_path": "/checkouts",
+        "page_summary": "Abandoned checkouts are checkouts where a customer entered an email address but didn't finish paying within about ten minutes. This page lets you review them, see whether a recovery email was sent, and whether the checkout was later recovered. Records older than three months are removed automatically.",
+        "steps": "1. In the Shopify admin, go to Orders → Abandoned checkouts.\n2. Click the checkout number you want to look at.\n3. To send a recovery link yourself, click the customer's email address in the customer information; your email program opens with the recovery link included. Only send it to that customer, because anyone with the link can complete the checkout.\n4. To send recovery emails automatically, go to Apps → Messaging → Automations, open the actions menu on the Abandoned checkout emails by Shopify automation, choose Edit settings, turn on automatic sending, pick the recipients and delay, then click Save.\n5. Back on the Abandoned checkouts page, check the Email status and Recovery status columns to track results.",
+        "keywords": "abandoned cart, abandoned checkout, recover cart, cart recovery email, incomplete checkout, lost sales, unfinished purchase",
+        "source_url": "https://help.shopify.com/en/manual/promoting-marketing/create-marketing/abandoned-checkouts"
+    },
+    {
+        "slug": "edit-order",
+        "title": "Edit an order after it's placed",
+        "admin_page": "Orders → (open the order) → Edit",
+        "admin_path": "/orders",
+        "page_summary": "Order editing lets you change an order after purchase but before it's fulfilled, without cancelling and recreating it. You can add or remove products, change quantities, add custom items, and adjust shipping fees or item discounts. Some orders can't be edited, such as local delivery, Shop Pay Installments, or orders created by apps.",
+        "steps": "1. In the Shopify admin, go to Orders and click the order.\n2. Click Edit.\n3. Make your changes: click Product to add an existing product, click Custom item to add a one-off item, type a new number in the Quantity column, or hover over an item and click × to remove it.\n4. For removed or reduced items, leave Restock units selected to return stock to inventory, or deselect it to skip restocking. Optionally add an internal Reason for edit.\n5. Review the new order total, save the update, and choose whether to notify the customer.\n6. If the total went down, issue a refund afterwards; if it went up, collect the balance by sending an invoice or accepting payment.",
+        "keywords": "edit order, change order, modify order, add item to order, remove item, change quantity, update order, order editing",
+        "source_url": "https://help.shopify.com/en/manual/fulfillment/managing-orders/editing-orders/products"
+    },
+    {
+        "slug": "cancel-order",
+        "title": "Cancel an order",
+        "admin_page": "Orders → (open the order) → More actions → Cancel order",
+        "admin_path": "/orders",
+        "page_summary": "Cancelling an order marks it as stopped so nobody keeps processing or fulfilling it, and lets you refund, restock, and notify the customer in one step. Partially fulfilled orders can't be cancelled; you'd need to cancel the fulfillment first or use refunds and returns.",
+        "steps": "1. In the Shopify admin, go to Orders and click the order.\n2. Click More actions → Cancel order.\n3. Under Refund payment, choose Original payment method, Store credit, or Later (use Later for partial refunds or if the order was already refunded).\n4. Pick a reason from the Reason for cancellation menu and optionally add a staff note.\n5. Decide whether to keep Restock inventory and Send a notification to the customer selected (both are on by default).\n6. Click Cancel order. To cancel up to 250 orders at once, select them on the Orders page and use the bulk Cancel orders action, but be careful: bulk cancel may refund immediately, including orders already refunded.",
+        "keywords": "cancel order, void order, cancel purchase, stop order, bulk cancel, cancel and refund",
+        "source_url": "https://help.shopify.com/en/manual/fulfillment/managing-orders/canceling-orders"
+    },
+    {
+        "slug": "create-return-exchange",
+        "title": "Create a return or exchange",
+        "admin_page": "Orders → (open the order) → Return",
+        "admin_path": "/orders",
+        "page_summary": "Returns let you record items a customer is sending back, with a reason, optional fees, and return shipping, and optionally add replacement items as an exchange. Only fulfilled items that haven't been refunded can be returned. Create the return before refunding so the reason is recorded.",
+        "steps": "1. In the Shopify admin, go to Orders and open the order.\n2. Click Return (if the order still has unfulfilled items, it's under More actions → Return).\n3. Enter the quantity of each item coming back and choose a return reason.\n4. Optionally add a restocking fee or return shipping fee in the Summary section, and add exchange items by clicking Add products under Exchange items.\n5. Choose a return shipping option: create a return label in Shopify (US only), upload your own label, or no shipping required.\n6. Click Create return. When the items arrive, process the return, then refund the customer, collect any balance owed, or fulfill the exchange items.",
+        "keywords": "return, returned order, order returned, handle a return, exchange, swap item, customer return, return label, restocking fee, send back, replacement",
+        "source_url": "https://help.shopify.com/en/manual/fulfillment/managing-orders/returns/creating-returns"
+    },
+    {
+        "slug": "order-statuses",
+        "title": "Understand order, payment, and fulfillment statuses",
+        "admin_page": "Orders",
+        "admin_path": "/orders",
+        "page_summary": "Every order shows an order status (Open, Archived, Canceled), a payment status, and a fulfillment status, plus a return status if a return exists. These labels tell you what work is left on the order, such as collecting money or shipping items.",
+        "steps": "1. Payment statuses: Pending (still processing or paid later/manually), Authorized (approved but not yet captured), Due (past the payment-terms date), Expired (authorization lapsed without capture), Paid, Partially paid, Refunded, Partially refunded, and Voided (authorization released before capture). An Expiring badge warns two days before an authorization deadline.\n2. Fulfillment statuses: Unfulfilled, In progress (being picked/packed), On hold (paused, stock stays reserved), Scheduled (prepaid subscription waiting for its date), Partially fulfilled, Fulfilled, and Fulfillment not required (shown as Not required).\n3. Order statuses: Open means work is still pending, Archived means it was closed manually or automatically, Canceled means it was cancelled.\n4. Return statuses: Return requested, Return in progress, Inspection complete, and Returned.\n5. Use the filters on the Orders page (for example, Payment status) to find orders in a particular state.",
+        "keywords": "order status, payment status, fulfillment status, what does authorized mean, pending, unfulfilled, partially paid, voided, on hold, status meaning",
+        "source_url": "https://help.shopify.com/en/manual/fulfillment/managing-orders/order-status"
+    },
+    {
+        "slug": "archive-order",
+        "title": "Archive an order",
+        "admin_page": "Orders → (open the order) → More actions",
+        "admin_path": "/orders",
+        "page_summary": "Archiving closes an order that needs no more work so it moves out of your open orders and into the Closed view. By default, Shopify archives orders automatically once they're paid and fulfilled or fully refunded; you can turn that off in Settings → General under Order processing.",
+        "steps": "1. In the Shopify admin, go to Orders.\n2. Click the order number you want to archive.\n3. Click More actions, then click Archive orders.\n4. The order's status changes to Archived and it appears in the Closed view.\n5. To archive or unarchive many orders at once, select them on the Orders page and use a bulk action.",
+        "keywords": "archive order, close order, hide order, closed orders, unarchive, auto archive, completed orders",
+        "source_url": "https://help.shopify.com/en/manual/fulfillment/managing-orders/canceling-orders"
+    },
+    {
+        "slug": "print-packing-slips",
+        "title": "Print packing slips",
+        "admin_page": "Orders → (open or select orders) → Print → Print packing slips",
+        "admin_path": "/orders",
+        "page_summary": "Packing slips list the items going into a shipment so you can pack and include them in the box. You can print them for one order or for many orders at once. If an order ships in several packages, each shipment gets its own slip.",
+        "steps": "1. In the Shopify admin, go to Orders.\n2. For one order, click the order; for several, tick the checkboxes next to the orders you need.\n3. Click Print, then Print packing slips.\n4. If you have more than one location, pick the fulfilling location and click Continue.\n5. Print the slips or save them.\n6. To change how slips look, edit the packing slip template under Settings → Shipping and delivery in the Documents area.",
+        "keywords": "packing slip, print packing slip, pick list, print order, bulk print, shipping document",
+        "source_url": "https://help.shopify.com/en/manual/fulfillment/managing-orders/printing-orders/packing-slips/printing-packing-slips"
+    },
+    {
+        "slug": "buy-shipping-label",
+        "title": "Buy and print a shipping label",
+        "admin_page": "Orders → (open the order) → Unfulfilled section → Create shipping label",
+        "admin_path": "/orders",
+        "page_summary": "You can buy carrier shipping labels directly from an unfulfilled order and print them along with packing slips or customs forms. Your fulfillment location must be eligible for Shopify shipping labels; if not, use a shipping label app instead.",
+        "steps": "1. In the Shopify admin, go to Orders and open an order with unfulfilled items.\n2. In the Unfulfilled section, click Create shipping label.\n3. Confirm the items and their weight; for international orders, click Edit customs information and add the country of origin and HS code.\n4. Choose a package, check the total weight, and select a shipping service (plus any extras like signature confirmation or insurance).\n5. Choose a ship date and whether to email tracking details to the customer.\n6. Click Buy shipping label, then print the label along with packing slips or customs forms if you want them.",
+        "keywords": "shipping label, buy label, print label, postage, create label, Shopify Shipping, USPS, UPS, ship order",
+        "source_url": "https://help.shopify.com/en/manual/fulfillment/fulfilling-orders/shipping-labels/buying-labels/buying-labels"
+    },
+    {
+        "slug": "order-notes-timeline",
+        "title": "Add notes and timeline comments to an order",
+        "admin_page": "Orders → (open the order) → Notes / Timeline",
+        "admin_path": "/orders",
+        "page_summary": "Each order has a Notes section and a Timeline where staff can leave internal information. The timeline also records events like payments, edits, and refunds. Notes and comments are for staff only and aren't shown to the customer.",
+        "steps": "1. In the Shopify admin, go to Orders and click the order.\n2. To add or change a note, click the pencil icon in the Notes section, type your note, and click Save.\n3. To add a comment, scroll to the Timeline section, click Leave a comment..., type your message, and click Post.\n4. Use the timeline to review the order's history, such as payment events.",
+        "keywords": "order note, add note, comment, timeline, internal note, staff note, order history, order activity",
+        "source_url": "https://help.shopify.com/en/manual/fulfillment/managing-orders/managing-order-details"
+    },
+    {
+        "slug": "fraud-analysis",
+        "title": "Review an order's fraud risk",
+        "admin_page": "Orders → (open the order) → Order risk",
+        "admin_path": "/orders",
+        "page_summary": "Fraud analysis helps you decide whether an order is safe to fulfill. It shows fraud indicators (such as address and CVV checks, location, and repeated card attempts) and, for eligible online card orders, an overall recommendation of low, medium, or high risk. Medium- and high-risk orders show a warning symbol on the Orders page.",
+        "steps": "1. In the Shopify admin, go to Orders; look for the warning symbol next to risky orders.\n2. Click the order and find the Order risk section.\n3. Open the risk details to see the recommendation and the individual indicators.\n4. Act on the overall recommendation rather than any single indicator: fulfill if low risk, confirm with the customer if it says to investigate, or consider cancelling and refunding if it's high risk.\n5. Avoid fulfilling high-risk orders, since chargebacks can put your payment processing at risk.",
+        "keywords": "fraud, risk, high risk order, fraud analysis, suspicious order, chargeback, order risk, fraudulent",
+        "source_url": "https://help.shopify.com/en/manual/fulfillment/managing-orders/protecting-orders/fraud-analysis"
+    },
+    {
+        "slug": "hold-fulfillment",
+        "title": "Put an order's fulfillment on hold",
+        "admin_page": "Orders → (open the order) → Unfulfilled section → Mark as on hold",
+        "admin_path": "/orders",
+        "page_summary": "Holding fulfillment pauses shipping on an order, for example when fraud risk is high or stock isn't available, while keeping its inventory reserved. On-hold orders don't show in the Unfulfilled list until the hold is released.",
+        "steps": "1. In the Shopify admin, go to Orders and click the order.\n2. In the Unfulfilled or In progress section, open the drop-down and click Mark as on hold.\n3. Choose the items to hold and pick a reason from the Hold reason menu.\n4. Click Mark as on hold.\n5. To release it later, open the order and click Release hold in the On hold section (if there are several holds, choose which to release, then click Release).",
+        "keywords": "hold fulfillment, on hold, pause order, pause shipping, release hold, delay fulfillment, stop shipping",
+        "source_url": "https://help.shopify.com/en/manual/fulfillment/fulfilling-orders/holding-fulfillments"
+    },
+    {
+        "slug": "export-orders",
+        "title": "Export orders to CSV",
+        "admin_page": "Orders → Export",
+        "admin_path": "/orders",
+        "page_summary": "Exporting creates a CSV file of your orders, or just their transaction histories, for spreadsheets or record keeping. Small exports download straight away; larger exports or date-range exports are emailed to you and the store owner.",
+        "steps": "1. In the Shopify admin, go to Orders.\n2. Filter and sort the list so it shows the orders you want.\n3. Click Export.\n4. In the Export orders window, choose which orders to include (for example, orders by date with a start and end date) and pick the file format.\n5. Click Export orders for full order data, or Export transaction histories for captured payment details only.\n6. Up to 50 orders download directly; bigger exports arrive by email.",
+        "keywords": "export orders, download orders, csv, spreadsheet, order report, transaction history, excel",
+        "source_url": "https://help.shopify.com/en/manual/fulfillment/managing-orders/exporting-orders"
+    },
+    {
+        "slug": "capture-payment",
+        "title": "Capture payment for an authorized order",
+        "admin_page": "Orders → (open the order) → Capture payment",
+        "admin_path": "/orders",
+        "page_summary": "If your store uses manual capture, card payments are first authorized (money reserved) and you must capture them to actually collect the funds. Authorizations expire (Shopify Payments allows 7 days for cards), so capture before the deadline. Capturing changes the payment status from Authorized to Paid.",
+        "steps": "1. In the Shopify admin, go to Orders; filter by Payment status: Authorized to find orders waiting for capture.\n2. Click the order number.\n3. Click Capture payment.\n4. Optionally lower the amount to capture only part of the payment (you can't capture more than was authorized).\n5. Click Capture.\n6. To capture the full amount on several card orders at once, select them on the Orders page and use a bulk action.",
+        "keywords": "capture payment, authorized, collect payment, manual capture, authorization expiring, charge card, partial capture",
+        "source_url": "https://help.shopify.com/en/manual/fulfillment/managing-orders/payments/capturing-payments"
+    },
+    {
+        "slug": "mark-order-paid",
+        "title": "Mark an order as paid",
+        "admin_page": "Orders → (open the order) → Payment pending → Collect payment → Mark as paid",
+        "admin_path": "/orders",
+        "page_summary": "Mark as paid is for orders with a pending payment where you've already received the money outside Shopify, such as cash or bank transfer. Shopify records the order as paid without charging anyone, and the customer gets an order confirmation email.",
+        "steps": "1. In the Shopify admin, go to Orders and click the order.\n2. In the Payment pending section, click Collect payment.\n3. Click Mark as paid.\n4. If you haven't actually received the money yet, use Send invoice from the same Collect payment menu instead, so the customer can pay through checkout.",
+        "keywords": "mark as paid, paid manually, cash payment, bank transfer, pending payment, record payment, manual payment, collect payment",
+        "source_url": "https://help.shopify.com/en/manual/fulfillment/managing-orders/payments/deferred-payments"
+    },
+    {
+        "slug": "products-list-page",
+        "title": "Search, filter and save views on the Products list",
+        "admin_page": "Products",
+        "admin_path": "/products",
+        "page_summary": "The Products page lists every product in your store, 50 per page. You can search, filter, sort and change columns to find products, and save combinations of filters as reusable views. Built-in views are All, Active, Draft and Archived.",
+        "steps": "1. In your Shopify admin, open Products.\n2. To search, type words into the Search and filter field and press Enter. Matches come from product titles, descriptions and tags.\n3. To filter, pick a filter, then choose an operator and a value. Products must match every filter you add.\n4. To sort, click the columns (layout) icon and choose an option from the Sort by menu. On desktop, the sort resets when the list refreshes.\n5. To keep a set of filters, click Save, name the view, then click Create view. Sort order isn't stored in views.",
+        "keywords": "product list, all products, find product, search products, filter products, sort products, saved view, product views, active tab, draft tab, archived tab",
+        "source_url": "https://help.shopify.com/en/manual/products/searching-filtering"
+    },
+    {
+        "slug": "edit-product",
+        "title": "Edit an existing product",
+        "admin_page": "Products → (product name)",
+        "admin_path": "/products",
+        "page_summary": "Each product has a details page where you can change its title, description, media, pricing, inventory, shipping, variants and organization. Saved changes show up in your online store right away.",
+        "steps": "1. In your Shopify admin, open Products.\n2. Click the name of the product you want to change.\n3. Update the details you need, such as the title, description, price or tags.\n4. Click Save.",
+        "keywords": "edit product, update product, change product, modify product, product details page, change product title, change description",
+        "source_url": "https://help.shopify.com/en/manual/products/add-update-products"
+    },
+    {
+        "slug": "duplicate-product",
+        "title": "Duplicate a product",
+        "admin_page": "Products → (product name) → More actions → Duplicate product",
+        "admin_path": "/products",
+        "page_summary": "Duplicating creates a new, separate product based on an existing one, without changing the original. It's useful for similar items. If you only need size or color options, Shopify suggests using variants instead.",
+        "steps": "1. In your Shopify admin, open Products and click the product you want to copy.\n2. Click More actions, then Duplicate product.\n3. Enter a title for the copy and, optionally, choose which details to carry over.\n4. Choose a status for the copy: draft, active or unlisted. An active copy goes to the same sales channels as the original, so pick draft if you want to choose channels first.\n5. Click Duplicate product.",
+        "keywords": "duplicate product, copy product, clone product, make a copy, similar product",
+        "source_url": "https://help.shopify.com/en/manual/products/add-update-products"
+    },
+    {
+        "slug": "product-status",
+        "title": "Product status: Active, Draft, Archived and Unlisted",
+        "admin_page": "Products → (product name) → Status",
+        "admin_path": "/products",
+        "page_summary": "A product's status controls whether it can be sold. Active means it's ready to sell. Draft means it still needs work. Archived means it's no longer sold and is hidden from your store and the main product list. Unlisted products can be bought only through their direct link and are hidden from search, collections, recommendations and your sitemap.",
+        "steps": "1. In your Shopify admin, open Products.\n2. Click the product you want to update.\n3. In the Status section, choose Active, Draft or Unlisted from the drop-down.\n4. Click Save.\n5. If the product is archived, unarchive it first. It comes back as a draft, and then you can change its status.",
+        "keywords": "product status, active, draft, archived, unlisted, hide product, publish product, unpublish, hidden product, direct link only",
+        "source_url": "https://help.shopify.com/en/manual/products/details/product-details-page"
+    },
+    {
+        "slug": "archive-product",
+        "title": "Archive or unarchive a product",
+        "admin_page": "Products → (product name) → More actions → Archive product",
+        "admin_path": "/products",
+        "page_summary": "Archiving takes a product off your online store but keeps it in your admin so you can bring it back later. It's the safer choice when you might sell an item again. Archived products are listed under the Archived tab.",
+        "steps": "1. In your Shopify admin, open Products and click the product.\n2. Click More actions, then Archive product, and confirm in the dialog.\n3. To restore it, go to the Archived tab in Products and open the product.\n4. Click More actions, then Unarchive product, and confirm. The product comes back as a draft.",
+        "keywords": "archive product, unarchive, restore product, hide product, stop selling, discontinue product, archived tab",
+        "source_url": "https://help.shopify.com/en/manual/products/add-update-products"
+    },
+    {
+        "slug": "delete-product",
+        "title": "Delete one or more products",
+        "admin_page": "Products → (product name) → More actions → Delete product",
+        "admin_path": "/products",
+        "page_summary": "Deleting removes a product from Shopify permanently, and it can't be undone or restored. If you might sell the item again, archive it instead.",
+        "steps": "1. In your Shopify admin, open Products and click the product you want to remove.\n2. Click More actions, then Delete product.\n3. Confirm by clicking Delete product in the dialog.\n4. To remove several products at once, tick their checkboxes on the Products list, choose the bulk action to delete the selected products, and confirm.",
+        "keywords": "delete product, remove product, permanently delete, bulk delete, delete multiple products, trash product",
+        "source_url": "https://help.shopify.com/en/manual/products/add-update-products"
+    },
+    {
+        "slug": "product-variants",
+        "title": "Add variants (size, color and other options)",
+        "admin_page": "Products → (product name) → Variants",
+        "admin_path": "/products",
+        "page_summary": "Variants let one product come in different versions, such as sizes or colors, each with its own price and stock. A product can have up to 3 options and up to 2,048 variants.",
+        "steps": "1. In your Shopify admin, open Products and click the product.\n2. In the Variants section, click Add options like size or color.\n3. Type an option name, such as Size, then enter each value, such as Small, Medium and Large.\n4. Optional: add a second or third option, such as Color.\n5. Click Done, then Save, and set the prices for the new variants.",
+        "keywords": "variants, add variant, options, size, color, colour, material, product options, multiple sizes, variations",
+        "source_url": "https://help.shopify.com/en/manual/products/variants/add-variants"
+    },
+    {
+        "slug": "edit-delete-variants",
+        "title": "Edit or delete a variant",
+        "admin_page": "Products → (product name) → Variants → (variant)",
+        "admin_path": "/products",
+        "page_summary": "Each variant has its own details page for its options, pricing, inventory and shipping. Quick changes to a variant's price or image can also be made from the product page.",
+        "steps": "1. In your Shopify admin, open Products and click the product.\n2. In the Variants section, click the variant you want to change.\n3. Update its options, pricing, inventory or shipping, then click Save.\n4. To remove the variant, click Delete variant on its page and confirm.\n5. If you'll stop selling a variant but want to keep it, change where it's published instead of deleting it.",
+        "keywords": "edit variant, change variant price, variant image, delete variant, remove variant, update variant, variant details",
+        "source_url": "https://help.shopify.com/en/manual/products/variants/edit-variants"
+    },
+    {
+        "slug": "create-collection",
+        "title": "Create a collection",
+        "admin_page": "Products → Collections",
+        "admin_path": "/collections",
+        "page_summary": "Collections group products so customers can find them more easily, such as by category or for a sale. Products can be added automatically with conditions (for example, by tag or type), picked by hand, or a mix of both. You can also exclude products, and exclusions always take priority.",
+        "steps": "1. In your Shopify admin, go to Products → Collections.\n2. Click Add collection and give it a title. Optionally add a description and a featured image.\n3. In the Products source, either add conditions so matching products join automatically, or click Add products to pick items by hand. With more than one condition, choose whether products must match any or all of them.\n4. Optional: exclude products, choose a sort order and pick the sales channels.\n5. Click Save, then add the collection to your online store menu so customers can find it.",
+        "keywords": "collection, create collection, add collection, category, group products, automated collection, smart collection, manual collection, conditions, exclude products",
+        "source_url": "https://help.shopify.com/en/manual/products/collections/create-collection"
+    },
+    {
+        "slug": "manual-collection",
+        "title": "Manual collections (legacy collection type)",
+        "admin_page": "Products → Collections",
+        "admin_path": "/collections",
+        "page_summary": "If your admin still uses the older collection types, you choose between a manual collection, where you pick each product yourself, and a smart (automated) collection, which adds products based on conditions. An automated collection can't be turned into a manual one, so you'd need to create a new manual collection instead.",
+        "steps": "1. In your Shopify admin, go to Products → Collections and click Add collection.\n2. Enter a title and description.\n3. In the Collection type section, choose Manual, then click Save.\n4. In the Products section, search or browse for products and add them. Then set the sort order.\n5. Click Save. To add more products later, open the collection, add them in the Products section and save.",
+        "keywords": "manual collection, smart collection, automated collection, collection type, add products to collection, legacy collections",
+        "source_url": "https://help.shopify.com/en/manual/products/collections/manual-shopify-collection"
+    },
+    {
+        "slug": "track-inventory-quantity",
+        "title": "Turn on inventory tracking (Track quantity)",
+        "admin_page": "Products → (product name) → Inventory",
+        "admin_path": "/products",
+        "page_summary": "Turning on inventory tracking lets Shopify count stock for a product or variant and update it as items sell. Tracking is set separately for each variant. You can also decide whether customers can keep buying after stock reaches zero.",
+        "steps": "1. In your Shopify admin, open Products and click the product. If it has variants, click the variant you want to track.\n2. In the Inventory section, turn on Track quantity.\n3. Optional: under Sell when out of stock, choose to keep selling when stock runs out.\n4. Enter how many units are available.\n5. Click Save. Repeat for each variant you want to track.",
+        "keywords": "track quantity, inventory tracking, track stock, stock count, enable inventory, sell when out of stock, continue selling, oversell, backorder",
+        "source_url": "https://help.shopify.com/en/manual/inventory-and-locations/setup/initial-inventory-setup"
+    },
+    {
+        "slug": "view-inventory",
+        "title": "View inventory levels",
+        "admin_page": "Products → Inventory",
+        "admin_path": "/products/inventory",
+        "page_summary": "The Inventory page lists every variant at each active location, with stock counts by state. Available is ready to sell, Committed is reserved for orders, Unavailable is on hand but not for sale, On hand is your total physical stock, and Incoming is stock arriving from transfers or purchase orders.",
+        "steps": "1. In your Shopify admin, go to Products → Inventory.\n2. Optional: open the view menu (All) and choose a saved view.\n3. Use the search bar to search for products, or add filters such as product type, vendor, tag or quantity.\n4. Optional: open the columns (layout) icon to show, hide or reorder columns, or to change the sort.",
+        "keywords": "inventory page, stock levels, view stock, available, on hand, committed, incoming, unavailable, inventory list, stock report",
+        "source_url": "https://help.shopify.com/en/manual/inventory-and-locations/adjusting-inventory/viewing-inventory"
+    },
+    {
+        "slug": "inventory-adjustment-history",
+        "title": "View inventory adjustment history",
+        "admin_page": "Products → (product name) → Inventory → View adjustment history",
+        "admin_path": "/products",
+        "page_summary": "Adjustment history records each change to a tracked product's stock, including when it happened, what caused it and who or what made it. It's useful for tracing stock differences. The product page shows the last 180 days. For older records, use the Inventory adjustment changes report.",
+        "steps": "1. In your Shopify admin, open Products and click the product.\n2. If it has variants, click the variant you want to check. History is shown for one variant at a time.\n3. In the Inventory section, make sure inventory tracking is on.\n4. Click View adjustment history.\n5. Review each entry's date, activity, who made the change and how the quantities changed.",
+        "keywords": "inventory history, adjustment history, stock history, who changed inventory, inventory log, stock changes, audit inventory, missing stock",
+        "source_url": "https://help.shopify.com/en/manual/inventory-and-locations/adjusting-inventory/adjustment-history"
+    },
+    {
+        "slug": "inventory-transfers",
+        "title": "Transfer inventory between locations",
+        "admin_page": "Products → Transfers",
+        "admin_path": null,
+        "page_summary": "Transfers move stock between your locations, or to and from outside locations such as suppliers. You can track stock while it's moving and receive full or partial shipments. A new transfer is saved as a draft and doesn't move any stock until you process it.",
+        "steps": "1. In your Shopify admin, go to Products → Transfers and click Create transfer.\n2. Choose the origin and destination locations. Leave one blank if it's an outside supplier or location.\n3. Search for the products you want, add them, and enter a quantity for each in the Move column.\n4. Optional: add a reference name, note or tags, then click Save to create a draft.\n5. Open the transfer to mark it as ready to ship, in transit or transferred. Receiving stock doesn't make the product sellable at that location automatically.",
+        "keywords": "transfer, inventory transfer, move stock, move inventory, between locations, warehouse transfer, restock store, ship to location",
+        "source_url": "https://help.shopify.com/en/manual/inventory-and-locations/inventory-transfers/creating-and-processing-transfers"
+    },
+    {
+        "slug": "purchase-orders",
+        "title": "Create a purchase order",
+        "admin_page": "Products → Purchase orders",
+        "admin_path": null,
+        "page_summary": "A purchase order records what you're buying from a supplier, including products, quantities, costs and payment terms. Receiving the goods is tracked on a linked inventory transfer. Before starting, you need a supplier, a location to receive the stock and inventory tracking turned on for the products.",
+        "steps": "1. In your Shopify admin, go to Products → Purchase orders and click Create purchase order.\n2. Choose a supplier, or create a new one. Optionally set the destination location.\n3. Add products, then enter a quantity for each. Optionally add the supplier SKU and cost.\n4. Optional: add a reference number, note, payment terms, supplier currency or tags. Review the cost summary, then click Save as draft.\n5. Once the supplier confirms, click Mark as ordered. This can't be undone. Then create an inventory transfer to track the shipment.",
+        "keywords": "purchase order, PO, supplier order, reorder stock, restock, order from supplier, vendor order, buy inventory",
+        "source_url": "https://help.shopify.com/en/manual/inventory-and-locations/purchase-orders/creating-purchase-orders"
+    },
+    {
+        "slug": "gift-card-product",
+        "title": "Sell gift cards (gift card product)",
+        "admin_page": "Products → Gift cards",
+        "admin_path": "/gift_cards",
+        "page_summary": "A gift card product lets customers buy gift cards from your store in amounts you set. Each amount must be above zero and can be at most 10,000 USD or the local equivalent. Customers can't type in their own amount on the online store.",
+        "steps": "1. In your Shopify admin, go to Products → Gift cards.\n2. Click Add a gift card product.\n3. Enter a title, description and images, and choose the currency and sales channels. The cross-currency redemption setting can't be changed later.\n4. Edit the amounts (denominations): replace the defaults, add new ones or remove ones you don't need. At least one is required.\n5. Click Save gift card product.",
+        "keywords": "gift card product, sell gift cards, gift card denominations, gift card amounts, gift voucher, add gift card product",
+        "source_url": "https://help.shopify.com/en/manual/products/gift-card-products/add-update-gift-card-products"
+    },
+    {
+        "slug": "issue-gift-card",
+        "title": "Create and send a gift card",
+        "admin_page": "Products → Gift cards",
+        "admin_path": "/gift_cards",
+        "page_summary": "You can create a gift card yourself in the admin and send it to a customer, for example as a reward or a goodwill gesture. The starting value can be at most 2,000 USD or the local equivalent. The code is generated for you.",
+        "steps": "1. In your Shopify admin, go to Products → Gift cards and click Create gift card.\n2. Optional: choose the currency and the cross-currency redemption setting. This setting can't be changed later.\n3. Enter the initial value, and pick or create the customer. They need an email address or phone number to receive it.\n4. Optional: set an expiration date and add an internal note.\n5. Click Save, then Send gift card, and choose to send it by email or SMS.",
+        "keywords": "issue gift card, create gift card, send gift card, give gift card, store credit, gift voucher, reward customer",
+        "source_url": "https://help.shopify.com/en/manual/products/gift-card-products/issue-gift-card"
+    },
+    {
+        "slug": "manage-gift-cards",
+        "title": "Manage existing gift cards",
+        "admin_page": "Products → Gift cards → (gift card)",
+        "admin_path": "/gift_cards",
+        "page_summary": "Each gift card has a details page showing its starting and current balance, customer, order, expiry date and activity timeline. From there you can change the expiry date, resend the card or deactivate it. You can't edit a balance directly in the admin.",
+        "steps": "1. In your Shopify admin, go to Products → Gift cards.\n2. Click the gift card you want to manage.\n3. To change the expiry, click Edit expiry date, choose a new date and click Save.\n4. To send it to the customer again, click Resend gift card. Only the remaining balance is sent.\n5. To stop it from being used, click Deactivate. This is permanent and can't be reversed.",
+        "keywords": "manage gift card, gift card balance, deactivate gift card, disable gift card, resend gift card, gift card expiry, expiration date, lookup gift card",
+        "source_url": "https://help.shopify.com/en/manual/products/gift-card-products/manage-purchased-gift-cards"
+    },
+    {
+        "slug": "import-products-csv",
+        "title": "Import products from a CSV file",
+        "admin_page": "Products → Import",
+        "admin_path": "/products",
+        "page_summary": "A CSV import adds or updates many products at once from a spreadsheet file. The file can be up to 15 MB. Export your products first as a backup, because an import can't be canceled once it starts.",
+        "steps": "1. In your Shopify admin, open Products and click Import.\n2. Click Add file and choose your CSV. It should be saved with UTF-8 encoding.\n3. Optional: clear the option to publish new products to all sales channels.\n4. Optional: choose to overwrite products with matching handles. Blank optional columns will then clear existing values.\n5. Click Upload and continue, review the details, then click Import products. You'll get an email when it finishes.",
+        "keywords": "import products, CSV import, upload products, bulk upload, spreadsheet import, product CSV, migrate products, overwrite products",
+        "source_url": "https://help.shopify.com/en/manual/products/import-export/import-products"
+    },
+    {
+        "slug": "export-products-csv",
+        "title": "Export products to a CSV file",
+        "admin_page": "Products → Export",
+        "admin_path": "/products",
+        "page_summary": "Exporting saves your product data as a CSV file. You can use it as a backup, edit products in a spreadsheet or move them elsewhere. Depending on what you export, the file downloads in your browser or is sent by email.",
+        "steps": "1. In your Shopify admin, open Products and click Export.\n2. Choose what to export: the current page, all products, selected products, or products matching your search and filters.\n3. Choose the file type: a CSV for spreadsheet apps such as Excel or Numbers, or a plain CSV.\n4. Click Export products.\n5. Exports of all products or filtered results are emailed to you. Smaller exports may download directly.",
+        "keywords": "export products, CSV export, download products, backup products, product spreadsheet, product list download",
+        "source_url": "https://help.shopify.com/en/manual/products/import-export/export-products"
+    },
+    {
+        "slug": "bulk-edit-products",
+        "title": "Bulk edit products",
+        "admin_page": "Products → (select products) → Bulk edit",
+        "admin_path": "/products",
+        "page_summary": "The bulk editor shows the products you select in a spreadsheet-style table, so you can change many fields at once. For very large updates, a CSV import is better. Inventory for products with multiple variants has to be bulk edited from the Inventory page instead.",
+        "steps": "1. In your Shopify admin, open Products.\n2. Tick the checkboxes next to the products you want to change.\n3. Click Bulk edit.\n4. Optional: click Columns to add or remove fields such as price, SKU or tags.\n5. Click a cell and type the new value, then click Save. If errors appear, fix them and save again.",
+        "keywords": "bulk edit, edit multiple products, mass edit, bulk update prices, edit many products, spreadsheet editor, bulk actions",
+        "source_url": "https://help.shopify.com/en/manual/shopify-admin/productivity-tools/bulk-editing"
+    },
+    {
+        "slug": "product-media",
+        "title": "Add, reorder or remove product images and media",
+        "admin_page": "Products → (product name) → Media",
+        "admin_path": "/products",
+        "page_summary": "The Media section of a product holds its images, videos and 3D models, with up to 250 items per product. The first item is the featured image shown in collections, the cart and checkout. Removing media from a product doesn't delete the file from your store.",
+        "steps": "1. In your Shopify admin, open Products and click the product.\n2. In the Media section, click Upload new, drag files in, or click Select existing to reuse a file or add one from a URL.\n3. To change the main image, drag it into the first position.\n4. To remove items, tick their checkboxes and click Remove.\n5. Save the product. To delete a file completely, remove it under Content → Files.",
+        "keywords": "product images, photos, pictures, media, upload image, product video, 3D model, featured image, main image, reorder images, delete image",
+        "source_url": "https://help.shopify.com/en/manual/products/product-media/add-media"
+    },
+    {
+        "slug": "compare-at-price",
+        "title": "Show a sale price with compare-at price",
+        "admin_page": "Products → (product name) → Price",
+        "admin_path": "/products",
+        "page_summary": "The compare-at price is the original price shown next to a lower selling price, so customers can see they're getting a sale. It must be higher than the price for the sale to show. Your theme decides how it looks, and checkout shows only the sale price.",
+        "steps": "1. In your Shopify admin, open Products and click the product.\n2. In the price area, click Compare at.\n3. Enter the original price in the Compare-at price field.\n4. Enter the sale price in the Price field.\n5. Click Save. For variants, open the variants from the Variants section and repeat these steps.",
+        "keywords": "compare at price, sale price, discount price, strikethrough price, was price, original price, markdown, on sale",
+        "source_url": "https://help.shopify.com/en/manual/products/details/product-pricing/sale-pricing"
+    },
+    {
+        "slug": "cost-per-item",
+        "title": "Track cost per item, profit and margin",
+        "admin_page": "Products → (product name) → Pricing",
+        "admin_path": "/products",
+        "page_summary": "Cost per item is an optional field for what you paid for a product or variant, not counting taxes and shipping. When you fill it in, the product page shows estimated profit and margin. Profit and margin aren't shown when the product is set to charge tax, and cost per item doesn't apply to gift cards.",
+        "steps": "1. In your Shopify admin, open Products and click the product. If it has variants, open the variant.\n2. Find the pricing area of the page.\n3. Enter your cost in the cost per item field.\n4. Review the profit and margin that Shopify calculates.\n5. Click Save.",
+        "keywords": "cost per item, product cost, profit, margin, profit margin, COGS, cost of goods, unit cost",
+        "source_url": "https://help.shopify.com/en/manual/products/details/product-details-page"
+    },
+    {
+        "slug": "product-sku",
+        "title": "Add a SKU to a product or variant",
+        "admin_page": "Products → (product name) → Variants → (variant) → Inventory",
+        "admin_path": "/products",
+        "page_summary": "A SKU is your own internal code for a product or variant. It helps with inventory tracking, reports, fulfillment and app syncing. SKUs are optional, but each product and variant should have a unique one, and Shopify warns you about duplicates.",
+        "steps": "1. In your Shopify admin, open Products and click the product.\n2. In the Variants section, click the variant you want to edit.\n3. In the Inventory section, click SKU and enter or change the code.\n4. Click Save.",
+        "keywords": "SKU, stock keeping unit, product code, item code, article number, inventory code, duplicate SKU",
+        "source_url": "https://help.shopify.com/en/manual/products/details/sku"
+    },
+    {
+        "slug": "product-barcodes",
+        "title": "Add barcodes to products and variants",
+        "admin_page": "Products → (product name) → Inventory → Barcodes",
+        "admin_path": "/products",
+        "page_summary": "Barcodes such as UPC, EAN, ISBN or GTIN let you scan products, for example in Shopify POS. A product or variant can have up to 20 barcodes, and each one must follow its type's format. Use the Custom type for codes that don't follow a standard.",
+        "steps": "1. In your Shopify admin, open Products and click the product.\n2. For a product without variants: in the Inventory section, click the Barcodes field, enter the number and optionally choose a barcode type.\n3. For a product with variants: select the variants in the Variants section, open the more actions (…) menu and choose Edit barcodes. Enter each code, then click Done.\n4. Optional: click Add barcode to add another code.\n5. Click Save.",
+        "keywords": "barcode, UPC, EAN, ISBN, GTIN, ASIN, scan, barcode number, add barcode, POS scanning",
+        "source_url": "https://help.shopify.com/en/manual/products/add-update-products"
+    },
+    {
+        "slug": "catalogs",
+        "title": "Create a catalog for a market",
+        "admin_page": "Markets → Catalogs",
+        "admin_path": null,
+        "page_summary": "A catalog is a set of products, with optional custom prices, that you assign to a market. It controls which products customers in that market can see and buy, and how much they pay. Without catalogs, every product is sold in every market at your default prices.",
+        "steps": "1. In your Shopify admin, go to Markets → Catalogs and click Create catalog.\n2. Enter a title and set the catalog to Active or Draft.\n3. Optional: assign it to a market now or later.\n4. In Pricing, choose the currency and, optionally, a percentage to raise or lower prices.\n5. In Products, exclude any products you don't want included or set specific prices. Then click Save.",
+        "keywords": "catalog, market catalog, price list, international pricing, market products, B2B catalog, custom prices, exclude products from market",
+        "source_url": "https://help.shopify.com/en/manual/markets/customizations/catalogs"
+    },
+    {
+        "slug": "add-customer",
+        "title": "Add a new customer",
+        "admin_page": "Customers",
+        "admin_path": "/customers",
+        "page_summary": "You can create a customer profile by hand from the Customers page, for example for someone who ordered by phone or in person. The profile stores their contact details, marketing consent and tax settings.",
+        "steps": "1. Open Customers in your Shopify admin.\n2. Click Add customer.\n3. Fill in the customer's details, such as name, email, phone and address.\n4. If the customer has agreed to receive marketing emails, tick the marketing consent checkbox in the Customer overview section.\n5. In Tax settings, choose whether to collect tax, skip tax, or apply exemptions. You can also enter a VAT number.\n6. Click Save.",
+        "keywords": "add customer, new customer, create customer, create customer profile, manually add customer, customer record",
+        "source_url": "https://help.shopify.com/en/manual/customers/manage-customers"
+    },
+    {
+        "slug": "edit-customer",
+        "title": "Edit a customer profile",
+        "admin_page": "Customers → (customer name)",
+        "admin_path": "/customers",
+        "page_summary": "A customer's profile is where you update their contact details, addresses, tax settings, marketing preferences, tags and internal notes. Only staff can see notes.",
+        "steps": "1. Open Customers and click the customer's name.\n2. To change their name, language, email or phone, open the Manage menu in Customer overview and choose to edit contact information.\n3. To add, edit or set a default address, open the Manage menu and choose to manage addresses.\n4. To change email, SMS or WhatsApp marketing consent, open the Manage menu and edit the marketing settings.\n5. Add or remove tags in the Tags section, or type an internal note in the note field.\n6. Click Save after each change.",
+        "keywords": "edit customer, update customer, change customer email, customer address, customer tags, customer note, customer tax exempt, marketing consent",
+        "source_url": "https://help.shopify.com/en/manual/customers/manage-customers"
+    },
+    {
+        "slug": "customer-segments",
+        "title": "Create a customer segment",
+        "admin_page": "Customers → Segments",
+        "admin_path": "/customers",
+        "page_summary": "Segments are customer lists built from rules, such as location or purchase history, and they update automatically as customers start or stop matching. You can use them to understand your customers and to target marketing, for example with Shopify Messaging.",
+        "steps": "1. Go to Customers, then click Segments.\n2. Click Create segment, or open an existing segment to use as a starting point. You can also start from a template on the Customers page.\n3. In the query editor, add filters with an operator and a value. Combine conditions with AND or OR.\n4. Click Run query to see which customers match.\n5. Click Save segment, give it a name, and save. If you started from an existing segment, save it as a new segment instead.",
+        "keywords": "segments, customer segments, customer groups, customer lists, filter customers, target customers, ShopifyQL, audience",
+        "source_url": "https://help.shopify.com/en/manual/customers/customer-segmentation/create-customer-segments"
+    },
+    {
+        "slug": "import-customers",
+        "title": "Import customers from a CSV file",
+        "admin_page": "Customers → Import",
+        "admin_path": "/customers",
+        "page_summary": "Use a CSV file to bring many customers into Shopify at once, for example when moving from another platform. The file must be UTF-8 encoded, have column headers, include an Email column, and be no larger than 15 MB. Orders and passwords can't be imported.",
+        "steps": "1. Prepare a UTF-8 CSV file with a header row that includes an Email column. Split files larger than 15 MB.\n2. Go to Customers and click Import.\n3. Click Add file and choose your CSV.\n4. Optional: tick the option to overwrite existing customers with the same email or phone number.\n5. Optional: tick the option to tag the imported customers and create a segment from them.\n6. Click Import customers.",
+        "keywords": "import customers, upload customers, customer CSV, bulk add customers, migrate customers, customer list upload",
+        "source_url": "https://help.shopify.com/en/manual/customers/import-export-customers"
+    },
+    {
+        "slug": "export-customers",
+        "title": "Export customers to a CSV file",
+        "admin_page": "Customers → Export",
+        "admin_path": "/customers",
+        "page_summary": "Download your customer list as a CSV file, either all of it or only selected or filtered customers. Exports of up to 50 customers download in your browser. Larger exports are sent by email.",
+        "steps": "1. Go to Customers. Optional: filter the list or select specific customers first.\n2. Click Export.\n3. Choose what to export: the current page, all customers, selected customers, or customers matching your filters.\n4. Optional: include customer tags and customer metafields.\n5. Choose a CSV format, either a spreadsheet-friendly CSV or a plain CSV.\n6. Click Export customers. Large exports arrive by email.",
+        "keywords": "export customers, download customers, customer CSV, customer list download, backup customers, export segment",
+        "source_url": "https://help.shopify.com/en/manual/customers/import-export-customers"
+    },
+    {
+        "slug": "customer-accounts-settings",
+        "title": "Customer accounts",
+        "admin_page": "Settings → Customer accounts",
+        "admin_path": "/settings/customer_accounts",
+        "page_summary": "The Customer accounts page controls whether shoppers can sign in to an account on your store. It also has related options such as self-serve returns, store credit, a custom URL, social sign-in, Sign in with Shop, and an identity provider.",
+        "steps": "1. In your Shopify admin, open Settings → Customer accounts.\n2. In the Sign-in links section, turn on Show sign-in links so customers can sign in.\n3. Click Save.\n4. To stop customer sign-in, turn Show sign-in links off and save. Customers can no longer sign in, and the account menu disappears from your store.\n5. Review the other options on the same page, such as self-serve returns, store credit, and sign-in methods, and turn on the ones you need.",
+        "keywords": "customer accounts, customer login, sign in, sign-in links, customer sign up, account page, login link, social sign-in, sign in with shop, self-serve returns, store credit",
+        "source_url": "https://help.shopify.com/en/manual/customers/customer-accounts/manage"
+    },
+    {
+        "slug": "b2b-create-company",
+        "title": "Create a B2B company",
+        "admin_page": "Customers → Companies",
+        "admin_path": null,
+        "page_summary": "For B2B (wholesale) selling, a company is the parent business record, and each company has one or more locations you sell to. A location can have its own catalogs, payment terms, addresses, tax settings and contacts. Your first location is created with the company.",
+        "steps": "1. Go to Customers → Companies.\n2. Click Add company.\n3. Enter the company name. Optional: add a company ID.\n4. Choose a main contact, either an existing customer or a new one. The contact needs an email address.\n5. Add shipping and billing addresses, then set catalogs, payment terms, checkout options and tax settings for the first location.\n6. Click Save.",
+        "keywords": "B2B, company, wholesale, business customer, add company, company location, B2B customer, trade account",
+        "source_url": "https://help.shopify.com/en/manual/b2b/companies-and-customers/creating-companies"
+    },
+    {
+        "slug": "email-campaign-shopify-messaging",
+        "title": "Send an email campaign (Shopify Messaging, formerly Shopify Email)",
+        "admin_page": "Apps → Messaging",
+        "admin_path": null,
+        "page_summary": "Shopify Messaging, formerly called Shopify Email, is the built-in tool for designing and sending marketing emails to your subscribers or to a customer segment. Shopify doesn't check your spelling, so send a test and review before you send.",
+        "steps": "1. Go to Apps → Messaging and click Create campaign.\n2. Choose a template, or choose to code your own email.\n3. In the To field, pick all email subscribers or a customer segment.\n4. Write a subject line, optional preview text, and the body. Add or remove sections as needed.\n5. Click Send test to email yourself a preview (up to five addresses).\n6. Click Review, then use Schedule send to send now, use the suggested time, or pick a custom date and time.",
+        "keywords": "Shopify Email, Shopify Messaging, email campaign, newsletter, send email, marketing email, email blast, schedule email",
+        "source_url": "https://help.shopify.com/en/manual/promoting-marketing/create-marketing/shopify-messaging/email/create-email/create-campaigns"
+    },
+    {
+        "slug": "marketing-automations",
+        "title": "Set up a marketing automation",
+        "admin_page": "Apps → Messaging → Automations",
+        "admin_path": null,
+        "page_summary": "Marketing automations send emails or SMS automatically when customers take certain actions, such as leaving items in their cart. Ready-made templates include abandoned cart and checkout recovery, welcome emails, post-purchase thank-yous, win-back and birthday messages.",
+        "steps": "1. Go to Apps → Messaging and click Automations.\n2. Click Create automation.\n3. Choose a template, for example recovering abandoned carts or welcoming new subscribers.\n4. For recovery templates, choose whether to send by email or SMS.\n5. Optional: edit the message and send yourself a test.\n6. Turn the automation on, or save it without turning it on and activate it later.",
+        "keywords": "automations, marketing automation, abandoned cart email, abandoned checkout, welcome email, win back, birthday email, automated email, flow",
+        "source_url": "https://help.shopify.com/en/manual/promoting-marketing/create-marketing/shopify-messaging/marketing-automations/create"
+    },
+    {
+        "slug": "growth-marketing-performance",
+        "title": "Growth page: marketing performance",
+        "admin_page": "Growth",
+        "admin_path": null,
+        "page_summary": "The Growth section of the admin summarizes how your marketing is performing. It shows sessions, conversion rate, average order value, sales attributed to marketing, channel performance, recent marketing activities and traffic sources. By default it covers the last 30 days compared with the 30 days before. Staff need the Home, Reports and Marketing permissions to see it.",
+        "steps": "1. Make sure your staff account has the Home, Reports and Marketing permissions.\n2. Open Growth in your Shopify admin.\n3. Review the marketing summary, and use the date picker to change the period or the comparison range.\n4. For more detail on traffic, open the full report from the online store sessions area.\n5. To see results per channel or campaign, open the channel report from the channel performance section. Data can take up to 24 hours to update.",
+        "keywords": "growth, marketing performance, marketing results, marketing page, attribution, traffic sources, marketing channels, campaign results, ROAS",
+        "source_url": "https://help.shopify.com/en/manual/promoting-marketing/analyze-marketing/marketing-performance"
+    },
+    {
+        "slug": "content-section",
+        "title": "Content section: metaobjects and files",
+        "admin_page": "Content → Metaobjects / Content → Files",
+        "admin_path": null,
+        "page_summary": "The Content section of the admin holds your metaobject entries and your uploaded files. The Metaobjects page lists every entry and has built-in views, such as storefront-visible, web pages, active, draft and recent entries. The Files page lists every file and lets you filter by size, type and where the file is used.",
+        "steps": "1. Open Content in the admin navigation, then choose Metaobjects or Files.\n2. On Metaobjects, click a saved view card at the top to see a filtered list, such as Active or Draft entries.\n3. To filter, choose an operator (is / is not) and a value in the search field. Use 'and' to add more filters, or comma-separated values for 'or'.\n4. To keep a filter set, save it as a new view.\n5. On Files, search or filter by file size, file type (image, video, 3D model and more) or usage, and save custom views if needed.",
+        "keywords": "content, metaobjects, files, uploaded files, images, media library, saved views, content section, file manager",
+        "source_url": "https://help.shopify.com/en/manual/custom-data/navigating-content"
+    },
+    {
+        "slug": "analytics-dashboard-customize",
+        "title": "Customize the Analytics dashboard",
+        "admin_page": "Analytics",
+        "admin_path": "/analytics",
+        "page_summary": "The Analytics page is a dashboard of metric cards showing key sales, sessions and fulfillment figures across all your sales channels. Each card links to a more detailed report. You can add, remove, resize and rearrange cards, and group them into named sections.",
+        "steps": "1. Go to Analytics.\n2. Open the three-dot menu and choose Customize.\n3. Drag cards to rearrange them, drag a card's corner to resize it, or click X on a card to remove it.\n4. Add cards by dragging them from the metrics library sidebar, or by clicking a metric name.\n5. Optional: add, rename, reorder or delete sections, or use Reset to default to restore the original layout.\n6. Click Save.",
+        "keywords": "analytics dashboard, analytics overview, metric cards, customize dashboard, KPIs, store performance, dashboard cards",
+        "source_url": "https://help.shopify.com/en/manual/reports-and-analytics/shopify-reports/overview-dashboard/customizing-overview-dashboard"
+    },
+    {
+        "slug": "find-a-report",
+        "title": "Find and open a report",
+        "admin_page": "Analytics → Reports",
+        "admin_path": "/analytics/reports",
+        "page_summary": "The Reports page gives you detailed data on specific metrics. Each report has a chart of its main figures and a table with more detail. Staff need Analytics permissions to view reports.",
+        "steps": "1. Go to Analytics → Reports.\n2. Choose the report you want to open.\n3. Review the chart at the top and the detailed table below it.\n4. As a shortcut, click a metric card on the Analytics dashboard to open its matching report.\n5. Optional: customize a report as a new exploration to build your own version.",
+        "keywords": "reports, find report, open report, analytics reports, report list, sales report, traffic report, custom report",
+        "source_url": "https://help.shopify.com/en/manual/reports-and-analytics/shopify-reports"
+    },
+    {
+        "slug": "live-view",
+        "title": "Live View (real-time store activity)",
+        "admin_page": "Analytics → Live View",
+        "admin_path": null,
+        "page_summary": "Live View shows what's happening on your online store right now, on a world map or 3D globe. It shows visitors from the past 5 minutes, sales, sessions, orders, top locations and products, and how many shoppers are in carts, checking out or purchasing. It's useful during busy periods like BFCM, or right after you launch a promotion. It requires the online store channel.",
+        "steps": "1. Go to Analytics → Live View.\n2. Switch between the 2D map and 3D globe with the Map and Globe icons.\n3. Hover over a dot to see details. Blue dots are visitor sessions and purple dots are orders.\n4. Search for a location, or zoom with the + and - buttons, to focus on an area.\n5. Optional: use streamer mode to hide your metrics when you share your screen.",
+        "keywords": "live view, real time, live visitors, who is on my store, current visitors, live map, globe, live traffic",
+        "source_url": "https://help.shopify.com/en/manual/reports-and-analytics/shopify-reports/live-view"
+    },
+    {
+        "slug": "theme-editor",
+        "title": "Customize your theme in the theme editor",
+        "admin_page": "Online Store → Edit theme",
+        "admin_path": "/themes",
+        "page_summary": "The theme editor lets you change your store's layout, content, colors and fonts without writing code, and shows a live preview as you work. Shopify recommends duplicating your theme first so you have a backup.",
+        "steps": "1. Go to Online Store in your Shopify admin to see your themes.\n2. Next to the theme you want to change, click Edit theme.\n3. Use the template menu in the top bar to switch to the page you want to edit.\n4. Click Sections to add or change sections and blocks, Theme settings for global colors, typography and layout, or App embeds for embedded apps.\n5. Use the mobile button to check the mobile layout.\n6. Click Save. You can only undo or redo changes before you save.",
+        "keywords": "theme editor, customize theme, edit theme, change store design, sections, blocks, theme settings, colors, fonts, store layout",
+        "source_url": "https://help.shopify.com/en/manual/online-store/themes/customizing-themes/theme-editor/features-overview"
+    },
+    {
+        "slug": "online-store-pages",
+        "title": "Add or edit a store page",
+        "admin_page": "Online Store → Pages",
+        "admin_path": null,
+        "page_summary": "Pages hold content that rarely changes, such as About us or Contact. You can make a page visible, hidden, or scheduled, and edit its search engine title, description and URL. To make a page easy to find, add a link to it in a navigation menu.",
+        "steps": "1. Go to Online Store → Pages.\n2. Click Add page, or click an existing page's title to edit it.\n3. Enter a title and the page content. You can also edit the HTML directly.\n4. In Visibility, choose visible or hidden, or schedule a publish date.\n5. Optional: edit the page title, meta description and URL handle in the search engine listing section.\n6. Click Save.",
+        "keywords": "pages, add page, about us page, contact page, edit page, create page, static page, page SEO",
+        "source_url": "https://help.shopify.com/en/manual/online-store/add-edit-pages"
+    },
+    {
+        "slug": "blog-posts",
+        "title": "Write a blog post",
+        "admin_page": "Content → Blog posts",
+        "admin_path": null,
+        "page_summary": "Blog posts are articles on your online store, published to one of your blogs. Every store starts with a blog called News. New posts are hidden until you make them visible or schedule them.",
+        "steps": "1. Go to Content → Blog posts.\n2. Click Add blog post.\n3. Enter a title (required) and write the post content.\n4. In Organization, choose the author and the blog the post belongs to.\n5. Optional: add a featured image, excerpt, tags, theme template or search engine listing details.\n6. In Visibility, make the post visible now or schedule a date, then click Save.",
+        "keywords": "blog, blog post, article, write blog, news, publish post, schedule post, content marketing",
+        "source_url": "https://help.shopify.com/en/manual/online-store/blogs/writing-blogs/working-with-blog-posts"
+    },
+    {
+        "slug": "navigation-menus",
+        "title": "Edit navigation menus",
+        "admin_page": "Content → Menus",
+        "admin_path": null,
+        "page_summary": "Menus organize the links that shoppers use to find products, collections, pages and blog posts. You edit menu items here and choose where menus appear in your theme settings. Save often: after 200 unsaved changes, editing is restricted until you save.",
+        "steps": "1. Go to Content → Menus and click the menu you want to change.\n2. To add a link, click Add menu item, enter a name, choose a destination (such as a page, collection or product), and click Add.\n3. To change a link, click Edit next to it, update the name or destination, and apply the change.\n4. To reorder, drag an item by its handle. To remove one, click its trash icon and confirm.\n5. Click Save menu.",
+        "keywords": "menu, navigation, main menu, footer menu, menu items, links, header links, store navigation, add link to menu",
+        "source_url": "https://help.shopify.com/en/manual/online-store/menus-and-links/editing-menus"
+    },
+    {
+        "slug": "online-store-preferences",
+        "title": "Online store preferences (title, meta description, password)",
+        "admin_page": "Online Store → Preferences",
+        "admin_path": null,
+        "page_summary": "Preferences holds store-wide online store settings. These include the homepage title and meta description used by search engines, a social sharing image, tracking codes, spam protection (hCaptcha), and Private mode, which puts your store behind a password page.",
+        "steps": "1. Go to Online Store → Preferences.\n2. In the social sharing image and SEO section, enter your homepage title and meta description.\n3. Optional: add a social sharing image.\n4. To password-protect your store, turn on Private mode in the Store access section. Share the password with anyone who should get in.\n5. Optional: adjust the spam protection checkboxes for forms and login pages.\n6. Click Save.",
+        "keywords": "preferences, homepage title, meta description, SEO title, password protect store, private mode, store password, social sharing image, hCaptcha, tracking code",
+        "source_url": "https://help.shopify.com/en/manual/online-store/setting-up/preferences"
+    },
+    {
+        "slug": "buy-domain",
+        "title": "Buy a domain through Shopify",
+        "admin_page": "Settings → Domains",
+        "admin_path": "/settings/domains",
+        "page_summary": "The Domains page is where you manage your store's web addresses. You can buy a new domain directly from Shopify (registered for one year, renews automatically by default, non-refundable) or connect one you already own elsewhere. The first domain you add becomes the address customers see.",
+        "steps": "1. Go to Settings → Domains.\n2. Click Buy new domain and enter the name you want.\n3. Compare the available extensions and prices, then click Buy next to your choice.\n4. Check your contact details, privacy and auto-renew options and payment method, then click Buy domain.\n5. Verify your email address using the email Shopify sends (within 15 days). The domain can take up to 48 hours to start working.",
+        "keywords": "domain, buy domain, custom domain, website address, URL, register domain, domain renewal, store address",
+        "source_url": "https://help.shopify.com/en/manual/domains/add-a-domain/buying-domains"
+    },
+    {
+        "slug": "store-plan",
+        "title": "Plan",
+        "admin_page": "Settings → Plan",
+        "admin_path": "/settings/plan",
+        "page_summary": "The Plan page shows which Shopify subscription your store is on. You can switch to a different plan from here, pause the store with the Pause and Build plan, close (deactivate) the store, or reactivate a frozen store.",
+        "steps": "1. In your Shopify admin, open Settings → Plan.\n2. Check which plan your store is on right now.\n3. To move to another plan, use the plan-change option on this page and pick the plan you want.\n4. To stop selling for a while without closing, switch to the Pause and Build plan.\n5. To cancel your subscription, deactivate the store from this page. Deactivation takes effect at the end of the current billing cycle.",
+        "keywords": "plan, pricing plan, subscription, upgrade plan, downgrade plan, change plan, pause store, pause and build, close store, deactivate store, cancel subscription, reactivate store",
+        "source_url": "https://help.shopify.com/en/manual/your-account/manage-orgs-and-stores/manage-pricing-plan"
+    },
+    {
+        "slug": "billing-and-bills",
+        "title": "Billing",
+        "admin_page": "Settings → Billing",
+        "admin_path": "/settings/billing",
+        "page_summary": "The Billing page is where you review what Shopify charges you. It shows the current billing cycle, any credits, your progress toward the billing threshold, and a history of past bills. You also manage the payment method for your Shopify bills here.",
+        "steps": "1. In your Shopify admin, open Settings → Billing.\n2. Look at the Current billing cycle section for this cycle's charges, credits, and threshold progress.\n3. Scroll to Past bills and click any bill to see its details. From a bill's details you can export it for your records.\n4. To add a payment method for your Shopify bills, open Billing profile.",
+        "keywords": "billing, bills, invoice, invoices, past bills, charges, subscription charges, billing cycle, billing threshold, billing credits, payment method for shopify, billing profile, download invoice",
+        "source_url": "https://help.shopify.com/en/manual/your-account/manage-billing/managing-your-bills"
+    },
+    {
+        "slug": "staff-accounts",
+        "title": "Add staff users and set permissions",
+        "admin_page": "Settings → Users",
+        "admin_path": "/settings/users",
+        "page_summary": "The Users page lets you invite people to your store admin and choose what they can access. Each user gets one or more roles, and their permissions are the combined set from all of those roles.",
+        "steps": "1. In your Shopify admin, open Settings → Users and click Add users.\n2. Under User details, keep Admin user selected, enter each email address in the Emails field, and click Add.\n3. Optional: leave the Secure sign-in method toggle on if you want to require secure sign-in. It's on by default.\n4. In the Roles section (Roles and groups on Shopify Plus), click Assign and pick an existing role or create a new one. Repeat to add more roles.\n5. Check the Permission summary to confirm what the user will be able to do, then click Save.",
+        "keywords": "users, staff, staff accounts, add staff, invite staff, employees, team members, permissions, roles, admin access, user roles, collaborators",
+        "source_url": "https://help.shopify.com/en/manual/your-account/users/invite-users"
+    },
+    {
+        "slug": "manage-staff-users",
+        "title": "Edit, suspend, or remove users",
+        "admin_page": "Settings → Users",
+        "admin_path": "/settings/users",
+        "page_summary": "After someone has access to your store, you can change their roles, suspend them for a while, or remove them for good, all from the Users list. Removing a user can't be undone. Shopify notes that stores on the Basic and Starter plans can't add users.",
+        "steps": "1. In your Shopify admin, open Settings → Users and click the user's name.\n2. To give them more access, click Assign in the Roles section, then click Save.\n3. To take a role away, open the ••• menu next to the role, choose Remove role, and save.\n4. To block access for now, click Actions → Suspend and confirm. Use Actions → Reactivate to bring them back.\n5. To delete the user permanently, click Actions → Remove and confirm.",
+        "keywords": "remove staff, delete user, suspend user, deactivate staff, reactivate user, change permissions, edit roles, revoke access, staff member left",
+        "source_url": "https://help.shopify.com/en/manual/your-account/users/manage-users"
+    },
+    {
+        "slug": "checkout-settings",
+        "title": "Checkout",
+        "admin_page": "Settings → Checkout",
+        "admin_path": "/settings/checkout",
+        "page_summary": "The Checkout settings page decides what customers must enter when they buy. You choose how customers give their contact details (phone or email, or email only) and whether fields like company name, address line 2, and shipping phone number are hidden, optional, or required.",
+        "steps": "1. In your Shopify admin, open Settings → Checkout.\n2. Under Customer contact method, choose Phone number or email, or Email only.\n3. Under Customer information, set each field (full name, company name, company VAT number, address line 2, shipping address phone number) to the option you want.\n4. Click Save. Changes can take up to about 30 seconds to show at checkout.",
+        "keywords": "checkout, checkout settings, checkout form, customer contact, email or phone at checkout, company name field, address line 2, phone number required, checkout fields, require first and last name",
+        "source_url": "https://help.shopify.com/en/manual/checkout-settings/checkout-form-options"
+    },
+    {
+        "slug": "locations",
+        "title": "Locations",
+        "admin_page": "Settings → Locations",
+        "admin_path": "/settings/locations",
+        "page_summary": "Locations are the places where you keep stock, sell, or fulfill orders, such as stores, warehouses, or pop-ups. Your plan limits how many active locations you can have (for example, 2 on Starter and 10 on Basic, Grow, and Advanced), and you always need at least one.",
+        "steps": "1. In your Shopify admin, open Settings → Locations.\n2. Click Add location, then use the edit icons to enter the location's name and address.\n3. Optional: turn off online order fulfillment for this location if it shouldn't ship online orders, or mark it as a physical storefront.\n4. Click Save.\n5. To deactivate a location, open it, click Deactivate location, choose where to move any inventory or orders, and confirm. You can't deactivate your default location, so change the default first.",
+        "keywords": "locations, add location, warehouse, store address, retail store, inventory location, deactivate location, fulfillment location, location limit",
+        "source_url": "https://help.shopify.com/en/manual/inventory-and-locations/locations/setup"
+    },
+    {
+        "slug": "customer-notifications",
+        "title": "Customer notifications",
+        "admin_page": "Settings → Notifications → Customer notifications",
+        "admin_path": "/settings/notifications",
+        "page_summary": "This page holds the emails Shopify sends to customers automatically, such as order and shipping updates. You can edit any template, preview it, send yourself a test, and set a shared logo and accent color for all templates. You need to confirm your sender email before you can edit a subject or body.",
+        "steps": "1. In your Shopify admin, open Settings → Notifications and click Customer notifications.\n2. Click the notification you want to change, then click Edit code.\n3. Update the email subject and the HTML body. Click Preview to check it, or Send test email to send it to your own login email.\n4. Click Save. To undo your changes, use Revert to and choose the default or previous version.\n5. To change the logo and accent color for every template, click Customize email template.",
+        "keywords": "notifications, customer notifications, email templates, order confirmation email, shipping confirmation email, edit email, notification logo, test email, sender email, email branding",
+        "source_url": "https://help.shopify.com/en/manual/fulfillment/setup/notifications/customizing-notification-template"
+    },
+    {
+        "slug": "staff-notifications",
+        "title": "Staff notifications",
+        "admin_page": "Settings → Notifications → Staff notifications",
+        "admin_path": "/settings/notifications",
+        "page_summary": "Staff notifications tell you or your team when things happen in the store, such as a new order. You choose who gets them and which ones each person gets.",
+        "steps": "1. In your Shopify admin, open Settings → Notifications and click Staff notifications.\n2. In the Recipients section, click Add recipient.\n3. Pick a staff member or enter an email address. If you use POS, you can also choose a location or All. Then click Add recipient.\n4. To pick which alerts someone gets, click the … next to them, choose Edit recipient, select the notifications, and save.\n5. Click Send test notification to check delivery. The test uses made-up order details.",
+        "keywords": "staff notifications, new order email, order alert, notify staff, admin email alerts, add recipient, order notification email, test notification",
+        "source_url": "https://help.shopify.com/en/manual/fulfillment/setup/notifications/staff-notifications"
+    },
+    {
+        "slug": "domains",
+        "title": "Domains",
+        "admin_page": "Settings → Domains",
+        "admin_path": "/settings/domains",
+        "page_summary": "The Domains page lists the web addresses connected to your store and lets you buy a new one through Shopify. The first domain you buy automatically becomes your primary domain, and domains you add later redirect to it.",
+        "steps": "1. In your Shopify admin, open Settings → Domains.\n2. Click Buy new domain and type the name you want.\n3. Compare the available extensions and prices, then click Buy next to your choice.\n4. Choose whether to auto-renew yearly, check your contact details, and pick a payment method. Then click Buy domain.\n5. Look for Shopify's verification email and confirm your address. A domain that isn't verified within 15 days might be suspended.",
+        "keywords": "domain, domains, buy domain, custom domain, website address, url, primary domain, connect domain, myshopify domain, redirect domain, domain renewal",
+        "source_url": "https://help.shopify.com/en/manual/domains/add-a-domain/buying-domains"
+    },
+    {
+        "slug": "store-policies",
+        "title": "Store policies",
+        "admin_page": "Settings → Policies",
+        "admin_path": "/settings/legal",
+        "page_summary": "The Policies page is where you add your return and refund policy, privacy policy, terms of service, shipping policy, legal notice, contact information, and subscription policy. Shopify can generate and keep the return and refund, terms of service, shipping, and contact information policies up to date from your store settings (the privacy policy is handled in Customer privacy). Shopify says its templates are for information only, aren't legal advice, and don't guarantee compliance. You're responsible for your policies being accurate, so ask a lawyer if you're unsure what applies to you.",
+        "steps": "1. In your Shopify admin, open Settings → Policies.\n2. In Written policies, click the policy you want to work on.\n3. To have Shopify generate it, turn on Use automated policy, review the text, and click Save. Turning this on replaces the existing text, so save a copy of your wording first.\n4. To write it yourself, turn Use automated policy off. Enter or edit the text, or click Insert template if it's offered.\n5. Click Save. Policies are linked in your checkout footer automatically. To add them to a store menu, use Content → Menus.",
+        "keywords": "policies, refund policy, return policy, privacy policy, terms of service, terms and conditions, shipping policy, contact information, legal notice, subscription policy, legal pages, policy template, automated policy, lawyer",
+        "source_url": "https://help.shopify.com/en/manual/checkout-settings/refund-privacy-tos"
+    },
+    {
+        "slug": "custom-data-metafields",
+        "title": "Custom data (metafields)",
+        "admin_page": "Settings → Metafields and metaobjects",
+        "admin_path": "/settings/custom_data",
+        "page_summary": "Metafield definitions let you add your own fields to products, customers, orders, and other parts of your store, such as care instructions or a size chart. A definition sets which values are allowed. You then fill in the value on each item.",
+        "steps": "1. Open Settings → Metafields and metaobjects, or open an item like a product and go to its Metafields section.\n2. Click Add definition and enter a name. If a matching standard definition is suggested, you can pick that.\n3. Click Select type and choose the kind of value, such as single line text or an image. Choose List of values if you need more than one.\n4. Optional: add a description and any validation rules, and choose where the field can be used (for example, storefronts).\n5. Click Save, then fill in values on your products or other items.",
+        "keywords": "metafields, custom data, custom fields, metaobjects, metafield definition, product fields, extra product info, add field, custom attributes",
+        "source_url": "https://help.shopify.com/en/manual/custom-data/metafields/metafield-definitions/creating-custom-metafield-definitions"
+    },
+    {
+        "slug": "store-languages",
+        "title": "Languages",
+        "admin_page": "Settings → Languages",
+        "admin_path": "/settings/languages",
+        "page_summary": "The Languages page controls which languages your store can be shown in. You add a language, add translations (for example, with the Translate & Adapt app), and publish it when it's ready. You can also change the store's default language here.",
+        "steps": "1. In your Shopify admin, open Settings → Languages.\n2. Click Add language, choose a language, click Next, turn on the domains it should be available on, and click Done.\n3. Add translations with the Translate & Adapt app or another translation app.\n4. When it's ready, open the menu next to the language and click Publish.\n5. To change the default, open the menu next to the current default and click Change default. This deletes existing translations for the language you switch to, so export them first.",
+        "keywords": "languages, translate store, add language, translation, multilingual, publish language, default language, translate and adapt, unpublish language",
+        "source_url": "https://help.shopify.com/en/manual/international/languages/manage-languages"
+    },
+    {
+        "slug": "apps-settings",
+        "title": "Apps",
+        "admin_page": "Settings → Apps",
+        "admin_path": "/settings/apps",
+        "page_summary": "This page lists the apps installed on your store, along with recently uninstalled ones. Open any app to see what it costs, what store data it can see or change, and its recent activity.",
+        "steps": "1. In your Shopify admin, open Settings → Apps.\n2. Click an app's name to open its details page.\n3. Under Activity and permissions, check which parts of your store the app can view or edit.\n4. Under Billing and usage charges, check its billing cycle, usage charges, and next bill date.\n5. To remove an app, open the Menu (three dots) next to it and choose Uninstall. Some app data can't be recovered afterwards, so export what you need first.",
+        "keywords": "apps, installed apps, app settings, uninstall app, remove app, app permissions, app charges, app billing, sales channels, app list",
+        "source_url": "https://help.shopify.com/en/manual/apps/managing-apps"
+    },
+    {
+        "slug": "brand-assets",
+        "title": "Brand",
+        "admin_page": "Settings → General → Brand assets",
+        "admin_path": null,
+        "page_summary": "Brand assets are your logos, brand colors, cover image, slogan, and short description, saved in one place. Themes, checkout, email notifications, and apps that support them can pull these in automatically.",
+        "steps": "1. In your Shopify admin, open Settings → General and click Manage in the Brand assets section.\n2. Under Logos, add a default logo (PNG or JPEG, at least 512px wide) and a square logo.\n3. Under Colors, click + to set a primary color and its contrasting color, and add secondary colors if your plan allows.\n4. Optional: add a cover image, a slogan of up to 80 characters, and a description of up to 150 characters.\n5. Click Save after each change.",
+        "keywords": "brand, brand assets, logo, store logo, brand colors, slogan, cover image, short description, branding, square logo",
+        "source_url": "https://help.shopify.com/en/manual/promoting-marketing/managing-brand-assets"
+    },
+    {
+        "slug": "gift-card-settings",
+        "title": "Gift card settings",
+        "admin_page": "Settings → Payments → Payment configuration",
+        "admin_path": "/settings/payments",
+        "page_summary": "Gift card settings are in Payments settings, not on a page of their own. Here you choose whether gift cards expire, and you can let customers add gift cards to Apple Wallet. By default, gift cards don't expire.",
+        "steps": "1. In your Shopify admin, open Settings → Payments.\n2. In the Payment configuration section, click Gift card expiration.\n3. Choose Gift cards never expire, or choose Gift cards expire and set how many days, months, or years. Check your local gift card rules first.\n4. Click Save.\n5. Optional: click Apple Wallet passes in the same section to turn on wallet passes for gift cards and adjust how they look, then save.",
+        "keywords": "gift cards, gift card settings, gift card expiration, gift card expiry, apple wallet, gift card pass, expire gift cards",
+        "source_url": "https://help.shopify.com/en/manual/products/gift-card-products/modify-gift-card-settings"
+    },
+    {
+        "slug": "files",
+        "title": "Files",
+        "admin_page": "Content → Files",
+        "admin_path": null,
+        "page_summary": "Files is the library for images, videos, and documents you upload to use around your store. You can upload in bulk, copy a file's link, replace a file, or delete files. This page is under Content, not Settings.",
+        "steps": "1. In your Shopify admin, open Content → Files.\n2. Click Upload files and select up to 200 files at once.\n3. Click the Link button next to a file to copy its URL.\n4. To swap a file, click the Replace icon and choose a new file in the same format. Check the link afterwards.\n5. To delete, select the files' checkboxes, click Delete, and confirm.",
+        "keywords": "files, upload file, images, pdf, file url, media library, upload image, delete file, replace file, file storage",
+        "source_url": "https://help.shopify.com/en/manual/shopify-admin/productivity-tools/file-uploads"
+    },
+    {
+        "slug": "customer-privacy",
+        "title": "Customer privacy and cookie banner",
+        "admin_page": "Settings → Customer privacy",
+        "admin_path": null,
+        "page_summary": "The Customer privacy page manages your privacy policy, cookie banner, and data sharing opt-out page. The cookie banner tells visitors that your store uses cookies and asks for their consent, and with automated settings it shows to visitors in the UK and EEA when you have active markets there. You must publish a privacy policy before you can use the banner. Shopify says automated privacy settings aren't a substitute for legal advice, and you're responsible for an accurate privacy policy and for complying with the law.",
+        "steps": "1. In your Shopify admin, open Settings → Customer privacy.\n2. Click Privacy policy. Write it yourself or choose Use automated policy, then click Save. You need it published before the banner works.\n3. Click Cookie banner. Keep Use automated settings on, or edit Regions and Content by hand and save. To edit by hand, you have to turn automated settings off first.\n4. Set the banner's appearance, choose its Position, preview it, and save.\n5. If you also use a third-party cookie banner app, set the same consent regions there as in Customer privacy. Otherwise non-essential data can be processed before visitors consent.",
+        "keywords": "customer privacy, cookie banner, cookie consent, consent banner, cookies, gdpr, uk, eea, eu, privacy settings, privacy policy, consent, compliant, cookie law",
+        "source_url": "https://help.shopify.com/en/manual/privacy-and-security/privacy/customer-privacy-settings/privacy-settings"
+    },
+    {
+        "slug": "shipping-packages",
+        "title": "Packages",
+        "admin_page": "Settings → Shipping and delivery → Packages",
+        "admin_path": "/settings/shipping",
+        "page_summary": "Saved packages are the boxes and envelopes you ship in. Shopify uses the default package's weight and size to work out calculated shipping rates and to speed up buying labels.",
+        "steps": "1. In your Shopify admin, open Settings → Shipping and delivery.\n2. In the Packages section, click Add package.\n3. Enter a name, choose the package type, and enter the outside dimensions and weight.\n4. Optional: select Use as default package, then click Add package.\n5. To edit, delete, or change the default later, open the package list and use the menu next to a package. You can't delete the current default package.",
+        "keywords": "packages, shipping box, default package, package dimensions, package weight, shipping labels, box size, parcel",
+        "source_url": "https://help.shopify.com/en/manual/fulfillment/setup/packaging/setting-up-packages"
+    },
+    {
+        "slug": "local-delivery",
+        "title": "Local delivery",
+        "admin_page": "Settings → Shipping and delivery → Local delivery",
+        "admin_path": "/settings/shipping",
+        "page_summary": "Local delivery lets you bring orders to nearby customers yourself. You set the delivery area by postal codes or by a radius around a location. You can add up to 10 zones per location, each with its own price and minimum order.",
+        "steps": "1. In your Shopify admin, open Settings → Shipping and delivery, then open Local delivery under Additional delivery methods and select your location.\n2. Under Location status, turn on delivery from this location.\n3. Under Delivery zones, choose Use postal codes or Set a delivery radius, then click Add zone.\n4. Enter a zone name, the postal codes or radius, an optional minimum order price, and the delivery price (0 makes it free).\n5. Click Save, then Save again.",
+        "keywords": "local delivery, deliver locally, delivery zone, delivery radius, postal codes, own delivery, delivery fee, home delivery",
+        "source_url": "https://help.shopify.com/en/manual/fulfillment/setup/delivery-methods/local-delivery"
+    },
+    {
+        "slug": "local-pickup",
+        "title": "Pickup in store",
+        "admin_page": "Settings → Shipping and delivery → Pickup in store",
+        "admin_path": "/settings/shipping",
+        "page_summary": "Pickup in store lets customers choose to collect online orders at one of your locations. You turn it on separately for each location and set the expected pickup time and the instructions customers receive.",
+        "steps": "1. In your Shopify admin, open Settings → Shipping and delivery and click Pickup in store under Additional delivery methods.\n2. Select the location you want to offer pickup at.\n3. Under Location status, turn on pickup for this location.\n4. Under Expected pickup date, choose how long orders take to be ready.\n5. Enter pickup instructions for the Ready for pickup notification, then click Save.",
+        "keywords": "local pickup, pickup in store, store pickup, click and collect, curbside pickup, buy online pick up in store, bopis, pickup instructions",
+        "source_url": "https://help.shopify.com/en/manual/fulfillment/setup/delivery-methods/pickup-in-store"
+    },
+    {
+        "slug": "payouts",
+        "title": "View your Shopify Payments payouts",
+        "admin_page": "Finance → Payouts",
+        "admin_path": null,
+        "page_summary": "The Payouts page lists the money Shopify Payments sends to your payout account: upcoming (scheduled) payouts, your current payout balance, and past payouts. Funds settle a few business days after a payment is captured (it varies by country), and you can choose a daily, weekly, or monthly schedule where your country allows it.",
+        "steps": "1. In your Shopify admin, open Finance.\n2. In the Payouts section, click View payouts.\n3. Check each payout's status: Scheduled, Deposited, Failed, or Withdrawn.\n4. Click a payout date and then the payout to see its total, destination bank account, and a breakdown of charges, refunds, adjustments, and reserves.\n5. To get a CSV of a payout's transactions, use the export option on that payout and choose Export payout transactions; the file is emailed to you and the store owner.",
+        "keywords": "payouts, payout, get paid, when do I get paid, deposit, bank transfer, payout schedule, payout balance, failed payout, settlement, money from sales, Shopify Payments payout",
+        "source_url": "https://help.shopify.com/en/manual/payments/shopify-payments/payouts/view-details"
+    },
+    {
+        "slug": "shopify-balance",
+        "title": "Open a Shopify Balance account",
+        "admin_page": "Finance → Main",
+        "admin_path": null,
+        "page_summary": "Shopify Balance is a money management account for handling your store's funds and transactions in one place, with an optional card that earns cashback and partner offers. It's available to merchants in the United States and Puerto Rico who use Shopify Payments; Shopify is not a bank, and the account services are provided through partner financial institutions.",
+        "steps": "1. Make sure you are the store owner and Shopify Payments is active (only the owner can open the account).\n2. In your Shopify admin, go to Finance and click Main.\n3. Click Open account, review your Shopify Payments details, and click Confirm.\n4. Enter your Social Security Number and mobile number, then click Confirm.\n5. Accept the Shopify Balance Account Agreement and Card Agreement, then click Open account.",
+        "keywords": "Shopify Balance, balance account, business account, Balance card, debit card, cashback, money management, business banking, set aside funds",
+        "source_url": "https://help.shopify.com/en/manual/finance/shopify-balance/setting-up-account"
+    },
+    {
+        "slug": "shopify-capital",
+        "title": "Check for and apply to a Shopify Capital offer",
+        "admin_page": "Finance",
+        "admin_path": null,
+        "page_summary": "Shopify Capital is a financing program offering merchant cash advances and loans to eligible stores in supported countries. Eligibility is assessed automatically from things like your sales history, account health, and location; if you qualify, an offer appears on the Finance page and you get an email. Only the store owner can apply, and an offer is not a guarantee of funding.",
+        "steps": "1. In your Shopify admin, open the Finance page and look for a Shopify Capital offer (no offer or email means the store isn't currently eligible).\n2. Review the offer and choose the amount you want; the terms adjust automatically with the amount.\n3. Submit your application, completing any identity checks or document requests for your country.\n4. Read and agree to the funding terms before you submit. You can't change the amount after applying.\n5. Watch for the underwriting decision; if the amount is revised, you'll get a new offer to apply for.",
+        "keywords": "Shopify Capital, loan, financing, funding, cash advance, merchant cash advance, business loan, capital offer, borrow money, repayment",
+        "source_url": "https://help.shopify.com/en/manual/finance/shopify-capital/eligibility"
+    },
+    {
+        "slug": "shopify-bills",
+        "title": "View your Shopify bills and billing profile",
+        "admin_page": "Settings → Billing",
+        "admin_path": "/settings/billing",
+        "page_summary": "The Billing page is where you see what Shopify charges you: your current billing cycle, any billing credits, progress toward your billing threshold, and past bills. It also holds your billing profile, where you manage the payment method, billing address, currency, and tax details used to pay your Shopify bills.",
+        "steps": "1. In your Shopify admin, go to Settings → Billing.\n2. Under Current billing cycle, review this cycle's charges, credits, and threshold progress.\n3. Under Past bills, click a bill to see its details or export a copy.\n4. Click Billing profile to manage your payment method, billing address, billing currency, and tax information.\n5. To add a payment method, click Add payment method and follow the prompts (cards can't be edited, so add a new card and delete the old one).",
+        "keywords": "bill, bills, invoice, Shopify bill, pay my bill, subscription fee, billing, charges, payment method, credit card on file, billing cycle, past bills, update card",
+        "source_url": "https://help.shopify.com/en/manual/your-account/manage-billing/managing-your-bills"
+    },
+    {
+        "slug": "chargebacks",
+        "title": "Respond to a chargeback or inquiry",
+        "admin_page": "Orders → (disputed order)",
+        "admin_path": "/orders",
+        "page_summary": "A chargeback happens when a cardholder disputes a charge with their bank; the bank pulls the disputed amount plus a fee from you right away, while an inquiry doesn't take funds immediately. You can submit evidence from the disputed order before the due date (usually 7 to 21 days after the dispute is filed), or accept the chargeback if it's valid.",
+        "steps": "1. In your Shopify admin, go to Orders and filter by Chargeback and inquiry status set to Open to find disputes needing a response.\n2. Open the disputed order and read the chargeback banner and details, including the reason code.\n3. Click Add evidence, add any explanation, and upload supporting files (PDF, JPEG, or PNG), then click Save.\n4. Either click Submit now to send it early, or leave it and Shopify submits your saved evidence on the due date.\n5. If you agree the dispute is valid, choose Accept chargeback instead and confirm.",
+        "keywords": "chargeback, dispute, inquiry, customer disputed charge, bank dispute, fraud claim, submit evidence, chargeback fee, accept chargeback",
+        "source_url": "https://help.shopify.com/en/manual/payments/chargebacks/chargebacks-in-admin"
+    },
+    {
+        "slug": "point-of-sale",
+        "title": "Point of Sale (POS) overview",
+        "admin_page": "Shopify POS app (iOS / Android)",
+        "admin_path": null,
+        "page_summary": "Shopify POS is an iOS and Android app for selling in person at shops, markets, and pop-ups. Staff build a cart, apply discounts, and take payment, and the app syncs orders and inventory with your Shopify admin, online store, and other channels.",
+        "steps": "1. Make sure multi-location is activated in your store settings, since POS requires it, and set up the location you'll sell from.\n2. Get the Shopify POS app on your iOS or Android device.\n3. Optionally connect hardware such as barcode scanners or cash drawers.\n4. Build a cart for each customer, add discounts if needed, and take payment.\n5. Track the resulting orders and inventory from your Shopify admin alongside your other channels.",
+        "keywords": "POS, point of sale, in-person sales, retail, sell in store, pop-up, market stall, card reader, cash register, Shopify POS app",
+        "source_url": "https://help.shopify.com/en/manual/sell-in-person/shopify-pos"
+    },
+    {
+        "slug": "shop-channel",
+        "title": "Set up the Shop channel",
+        "admin_page": "Settings → Sales channels",
+        "admin_path": null,
+        "page_summary": "The Shop channel controls how your Shop Store looks to shoppers in the Shop app, along with your related shopping settings. Stores that meet the Shop Merchant Guidelines get the channel added automatically; otherwise you can install it from the Shopify App Store.",
+        "steps": "1. In your Shopify admin, go to Settings → Sales channels.\n2. Click Shopify App Store, signing in if asked.\n3. Search for Shop and open its listing.\n4. Click Install.\n5. Publish products to the Shop channel, then customize your Shop Store details and home page.",
+        "keywords": "Shop app, Shop channel, Shop Store, Shop Pay app, sell on Shop, Shop marketplace, Shop listing",
+        "source_url": "https://help.shopify.com/en/manual/online-sales-channels/shop/setup"
+    },
+    {
+        "slug": "sales-channels-overview",
+        "title": "Sales channels overview",
+        "admin_page": "Sales channels",
+        "admin_path": null,
+        "page_summary": "Sales channels are the places you sell beyond (or alongside) your online store, all managed from one Shopify admin. They include social commerce (Facebook, Instagram, TikTok), Google and marketplaces like Amazon and Temu, Shopify options like Shop, agentic storefronts, and Shopify Collective, plus third-party channels from the App Store.",
+        "steps": "1. In your Shopify admin, look at the Sales channels list in the sidebar to see which channels you have.\n2. Decide where your customers shop: social platforms, Google, marketplaces, or the Shop app.\n3. Add the channel you want from the Shopify App Store (see Add or remove a sales channel).\n4. Manage product availability and pricing per channel as needed.\n5. For help with a third-party channel, contact its developer.",
+        "keywords": "sales channels, channels, social selling, Facebook, Instagram, TikTok, Google, Amazon, Temu, marketplaces, sell on social media, Shopify Collective, multichannel",
+        "source_url": "https://help.shopify.com/en/manual/online-sales-channels"
+    },
+    {
+        "slug": "add-remove-sales-channel",
+        "title": "Add or remove a sales channel",
+        "admin_page": "Settings → Sales channels",
+        "admin_path": null,
+        "page_summary": "The Sales channels settings page lists the channels installed on your store and lets you add new ones from the Shopify App Store or uninstall ones you no longer use. When you add a channel, your existing products become available on it automatically.",
+        "steps": "1. In your Shopify admin, go to Settings → Sales channels.\n2. To add one, click Shopify App Store, search for the channel, and click Install.\n3. To remove one, click the horizontal menu icon next to the channel and choose Uninstall.\n4. Tick the box confirming you understand the risks of uninstalling.\n5. Click Uninstall to finish.",
+        "keywords": "add sales channel, install channel, remove sales channel, uninstall channel, delete channel, connect Facebook, connect Google, manage channels",
+        "source_url": "https://help.shopify.com/en/manual/online-sales-channels/manage"
+    },
+    {
+        "slug": "agentic-storefronts",
+        "title": "Agentic storefronts (sell in AI channels)",
+        "admin_page": "Sales channels → Agentic",
+        "admin_path": null,
+        "page_summary": "Agentic storefronts let shoppers find and buy your products inside AI channels such as ChatGPT, Google AI Mode and Gemini, Microsoft Copilot, and Meta, with products supplied through Shopify Catalog (or Google channels for Google AI). It's on by default for eligible stores, and AI-sourced orders show channel or referrer attribution in your admin.",
+        "steps": "1. In your Shopify admin, go to Sales channels → Agentic.\n2. Review and accept the Agentic Storefronts supplemental terms if prompted.\n3. Choose which AI channels you want to sell on.\n4. Check order attribution in your admin to see which sales came from AI channels.",
+        "keywords": "agentic, agentic storefronts, AI channels, ChatGPT, Gemini, Google AI Mode, Copilot, Meta AI, sell on AI, AI shopping",
+        "source_url": "https://help.shopify.com/en/manual/online-sales-channels/agentic-storefronts"
+    },
+    {
+        "slug": "install-app",
+        "title": "Install an app",
+        "admin_page": "Apps",
+        "admin_path": "/apps",
+        "page_summary": "Apps add features to your store and are installed from the Shopify App Store. Before installing, you see exactly what personal data and store data the app wants to view or edit, plus a link to its privacy policy. Installed apps then appear on the Apps page in your admin.",
+        "steps": "1. Sign in to the Shopify App Store and search for the app.\n2. Open the app's listing and click Install.\n3. On the Install app screen, expand the data access sections to review what personal and store data the app can view or edit, and read its privacy policy.\n4. Click Install to authorize the app.\n5. Open the app from the Apps page in your Shopify admin to set it up.",
+        "keywords": "install app, add app, App Store, get an app, download app, new app, app install, authorize app",
+        "source_url": "https://help.shopify.com/en/manual/apps/install-setup-apps"
+    },
+    {
+        "slug": "uninstall-app",
+        "title": "Uninstall an app",
+        "admin_page": "Settings → Apps",
+        "admin_path": "/settings/apps",
+        "page_summary": "You remove apps from the Apps section of Settings. Uninstalling stops future recurring charges, but you may still be billed for the current cycle, charges billed outside Shopify aren't cancelled, some app data can't be recovered, and code the app added to your theme may remain.",
+        "steps": "1. Before uninstalling, export any app data you need and check with the developer about theme code cleanup or refunds.\n2. In your Shopify admin, go to Settings → Apps.\n3. Click the menu icon next to the app and choose Uninstall.\n4. Optionally pick a reason, then click Uninstall.\n5. If the app isn't listed, it may be a sales channel; remove it from Settings → Sales channels instead.",
+        "keywords": "uninstall app, remove app, delete app, cancel app, stop app charges, app billing, get rid of app",
+        "source_url": "https://help.shopify.com/en/manual/apps/uninstalling-apps"
+    },
+    {
+        "slug": "app-permissions",
+        "title": "Review an app's permissions and data access",
+        "admin_page": "Settings → Apps → (app)",
+        "admin_path": "/settings/apps",
+        "page_summary": "Each installed app has a details page showing which areas of your store it can view or edit, its recent activity, and what personal data it can access under its privacy details. Activity and permission tracking applies to third-party apps, not apps made by Shopify.",
+        "steps": "1. In your Shopify admin, go to Settings → Apps.\n2. Click the app you want to review.\n3. In the Activity and permissions section, check the access areas, view/edit permissions, and recent activity.\n4. Hover over an area name or click a recent activity date for more detail.\n5. In the Privacy section, expand a category to see what personal data the app uses, and open the developer's privacy policy.",
+        "keywords": "app permissions, app access, app data, what data can an app see, app privacy, app scopes, app activity, data access, customer data apps",
+        "source_url": "https://help.shopify.com/en/manual/apps/managing-apps"
+    },
+    {
+        "slug": "admin-home",
+        "title": "Shopify admin Home page",
+        "admin_page": "Home",
+        "admin_path": null,
+        "page_summary": "Home is the first page you see in the admin. It summarizes recent sales (the last 30 days by default), lists order tasks that need action such as fulfilling orders or submitting chargeback evidence, and shows cards with insights, guides, recommendations, and feature updates.",
+        "steps": "1. Click Home in the admin sidebar.\n2. Review the metrics section, changing the date range or sales channel if needed, or use the edit icon on a metric tab to pick which metrics show.\n3. Work through any order tasks, such as capturing payments, fulfilling orders, or reviewing high-risk orders.\n4. Read the insight and recommendation cards and dismiss ones you don't need (order-task cards can't be dismissed).\n5. Open a guide card to follow it step by step with Sidekick.",
+        "keywords": "home, home page, dashboard, admin home, overview, store summary, sales summary, to do, tasks, insights",
+        "source_url": "https://help.shopify.com/en/manual/shopify-admin/shopify-home"
+    },
+    {
+        "slug": "admin-search",
+        "title": "Search the Shopify admin",
+        "admin_page": "Search bar (top bar or sidebar)",
+        "admin_path": null,
+        "page_summary": "The admin search bar finds apps, customers, orders, products, sales channels, and more from anywhere in the admin. Depending on your admin design it sits in the top bar or the sidebar, and you can open it with Ctrl + K (PC) or Command + K (Mac).",
+        "steps": "1. Click the search bar or press Ctrl + K (PC) / Command + K (Mac).\n2. Type what you're looking for, such as an order number, product, or customer name.\n3. Narrow results with a filter like Orders or Products; type / or click the filter icon to see all filters (one filter at a time).\n4. Click Show more if the item you want isn't among the first results.\n5. To find a specific setting, use the search field inside Settings.",
+        "keywords": "search, search bar, find, look up, find order, find product, find customer, keyboard shortcut, command K, ctrl K",
+        "source_url": "https://help.shopify.com/en/manual/shopify-admin/admin-search"
+    },
+    {
+        "slug": "shopify-inbox",
+        "title": "Shopify Inbox (customer chat)",
+        "admin_page": "Inbox",
+        "admin_path": null,
+        "page_summary": "Shopify Inbox lets you chat with visitors to your online store. Staff can reply with messages, product links, discount codes, and images, and you can optionally turn on an Inbox agent that answers common questions about products, shipping, returns, and policies automatically.",
+        "steps": "1. Install Shopify Inbox from the Shopify App Store.\n2. Open the Inbox page in your Shopify admin to configure settings.\n3. Customize chat appearance, availability hours, quick replies, and notifications.\n4. Optionally turn on and train the Inbox agent to answer customers automatically.\n5. Reply to conversations from the Shopify Inbox app on desktop, iOS, or Android.",
+        "keywords": "Inbox, Shopify Inbox, live chat, chat, customer chat, messages, chatbot, customer support, chat widget, Inbox agent",
+        "source_url": "https://help.shopify.com/en/manual/inbox"
+    },
+    {
+        "slug": "shopify-mobile-app",
+        "title": "Shopify mobile app",
+        "admin_page": "Shopify app (iOS / Android)",
+        "admin_path": null,
+        "page_summary": "The Shopify app lets you run your store from an iPhone, iPad, Android device, or Apple Watch. You can check store performance, manage orders and fulfillments, capture payments, update products, edit your theme, and get notifications about new orders.",
+        "steps": "1. Download Shopify for iPhone or Shopify for Android on a supported device (iOS/iPadOS 18+, Android 11+).\n2. Open the app and log in to your Shopify account.\n3. Use the menu to reach areas like orders, products, and Finance.\n4. Turn on notifications to hear about new orders and Timeline mentions.",
+        "keywords": "mobile app, Shopify app, phone app, iPhone, Android, iPad, Apple Watch, manage store on phone, mobile admin",
+        "source_url": "https://help.shopify.com/en/manual/shopify-admin/shopify-app"
+    },
+    {
+        "slug": "campaign-autopilot",
+        "title": "Campaign Autopilot",
+        "admin_page": "Growth → Autopilot",
+        "admin_path": null,
+        "page_summary": "Campaign Autopilot runs your marketing for you within limits you set. You connect marketing channels (for example Meta ads or Shop Campaigns), give it a monthly budget and guardrails, and it recommends tactics such as ad campaigns and email automations. Depending on your permissions, it either launches them on its own or waits for your approval. It may not be available on every store yet.",
+        "steps": "1. In your Shopify admin, go to Growth → Autopilot.\n2. In the Channels section, click Connect next to a channel and follow the prompts. You need at least one channel before Autopilot suggests a strategy.\n3. In the Budget section, click Edit and set your monthly ad spend.\n4. In the Guardrails section, click Edit, set limits such as target return on ad spend, regions and languages, then click Save.\n5. In the Permissions section, click Edit, choose whether Autopilot can create email and ad campaigns by itself or must ask you first, then click Save.\n6. Check Pending actions regularly: open a tactic, review its channel, audience, budget and schedule, then click Approve or Dismiss.\n7. To stop everything, open More actions in the Autopilot configuration card and click Pause all channels (running ads pause and scheduled emails are cancelled). Use Resume all channels to restart.",
+        "keywords": "campaign autopilot, autopilot, automatic marketing, ai marketing, growth strategy, guardrails, pending actions, ad budget, meta ads, shop campaigns, roas, marketing automation",
+        "source_url": "https://help.shopify.com/en/manual/promoting-marketing/autopilot/setting-up-autopilot"
+    },
+    {
+        "slug": "draft-order-collect-payment",
+        "title": "Collect payment for a draft order (credit card or mark as paid)",
+        "admin_page": "Orders → Drafts → (open the draft) → Collect payment",
+        "admin_path": "/draft_orders",
+        "page_summary": "The Collect payment button in a draft order's Payment section turns the draft into a real order. Credit card lets you type in the customer's card and charge it now (Shopify Payments only, and your identity must be verified). Mark as paid is for money you already received another way, such as cash or bank transfer, or for importing a past order: nothing is charged. You can also send the customer an invoice so they pay at checkout themselves.",
+        "steps": "1. In your Shopify admin, go to Orders → Drafts and open the draft order.\n2. In the Payment section, click Collect payment.\n3. To charge a card now, choose Credit card, enter the customer's billing and card details, then click Charge (the button shows the total). This needs Shopify Payments and a verified identity.\n4. If you already got the money (cash, bank transfer) or are importing an old order, choose Mark as paid, change Amount received if it differs, then click Create order. Nothing is charged and the customer gets an order confirmation email.\n5. If a checkout rule blocks the order, click Cancel to go back to the draft, or Ignore and create order to continue.\n6. To let the customer pay themselves, send them an invoice or checkout link instead.",
+        "keywords": "collect payment, card payment, credit card, charge card, enter card, mark as paid, pay draft order, take payment, phone order payment, amount received, invoice, cash payment",
+        "source_url": "https://help.shopify.com/en/manual/fulfillment/managing-orders/create-orders/get-paid"
+    },
+    {
+        "slug": "gdpr-compliance",
+        "title": "GDPR compliance",
+        "admin_page": "Settings → Customer privacy",
+        "admin_path": null,
+        "page_summary": "Shopify gives you tools to help with GDPR: customer privacy settings (privacy policy, cookie banner, data sale opt-out page), customer data request tools, and a Data Processing Addendum. You are still responsible for understanding your own GDPR obligations and setting up your store to match. Shopify says this is general information, not legal advice, so talk to your own lawyer.",
+        "steps": "1. In your Shopify admin, open Settings → Customer privacy.\n2. Set up your privacy policy, cookie banner, and data sale opt-out page there.\n3. In your privacy policy, disclose the legal bases you rely on to process personal data.\n4. If you use automated policies for customers in the UK, EEA, or Switzerland, add the legal basis for each processing purpose, plus your data protection officer's contact details if you have one.\n5. Use the customer data request tools to handle access, correction, and erasure requests from customers.\n6. Review the Data Processing Addendum, which sets out your responsibilities and Shopify's.",
+        "keywords": "gdpr, gdpr compliant, gdpr compliance, eu privacy law, european customers, data protection, privacy law, data processing addendum, dpa, legal basis, uk gdpr, eea, switzerland, am i compliant",
+        "source_url": "https://help.shopify.com/en/manual/privacy-and-security/privacy/gdpr/comply-with-gdpr"
+    },
+    {
+        "slug": "customer-data-requests",
+        "title": "Customer data requests",
+        "admin_page": "Customers → (customer name)",
+        "admin_path": "/customers",
+        "page_summary": "When a customer asks for their personal data, or asks you to erase it, you can handle the request from their customer profile. Erasing removes personal details such as name and address, but the record of what was sold and when stays in your admin. Shopify processes the erasure for you, including in apps and channels you've installed, but you must contact any other companies you shared the data with yourself. You have 10 days to cancel an erasure request after you submit it.",
+        "steps": "1. In your Shopify admin, click Customers and open the customer's profile.\n2. To export their data, click More actions → Request customer data, then refresh the profile page to get it. Store owners also get it by email.\n3. Only hand over the data if you've decided it's legally required or matches your store's policies.\n4. To erase their data, click More actions → Erase personal data.\n5. To cancel a pending erasure within 10 days, open the profile and click Cancel request in the Erasure request submitted section.",
+        "keywords": "customer data request, erase customer data, delete personal data, redact, right to be forgotten, data subject request, export customer data, request customer data, gdpr request, ccpa request, privacy request, erasure",
+        "source_url": "https://help.shopify.com/en/manual/privacy-and-security/privacy/processing-customer-data-requests"
+    },
+    {
+        "slug": "data-sharing-opt-out",
+        "title": "Data sharing opt-out page",
+        "admin_page": "Settings → Customer privacy → Data sharing opt-out page",
+        "admin_path": null,
+        "page_summary": "A data sharing opt-out page is a page in your online store where visitors can opt out of the sale or sharing of their data, and out of processing that may count as targeted advertising. If a visitor's browser sends a Global Privacy Control signal, Shopify treats it as an opt-out. When you add the link to your store menu, a privacy choices icon is added next to it automatically, and that icon may be required where you do business. You must publish a privacy policy before you can use this page.",
+        "steps": "1. In your Shopify admin, open Settings → Customer privacy and make sure your privacy policy is published.\n2. Click Data sharing opt-out page.\n3. In Regions and content, choose automated settings, or edit Regions and Content yourself and save.\n4. In the Menus section, choose where the page link appears in your store menu, then save.\n5. Staff who set this up need permissions for store settings, online store pages, and menus.",
+        "keywords": "do not sell, do not sell or share my personal information, data sharing opt-out, opt out page, ccpa, cpra, california privacy, us state privacy laws, targeted advertising, global privacy control, gpc, your privacy choices",
+        "source_url": "https://help.shopify.com/en/manual/privacy-and-security/privacy/customer-privacy-settings/privacy-settings"
+    },
+    {
+        "slug": "tax-registration",
+        "title": "Tax registration and your responsibilities",
+        "admin_page": "Settings → Taxes and duties",
+        "admin_path": "/settings/taxes",
+        "page_summary": "Shopify can handle most common sales tax calculations, and you can set up overrides for unusual tax rules. Shopify says tax is your responsibility. If you need to collect sales tax, you must register your business with your local or federal tax authority. Shopify doesn't file or pay your taxes for you unless you use Shopify Tax and set up automated filing.",
+        "steps": "1. Find out whether you're required to collect and remit sales tax in your country or region.\n2. If you are, register your business with your local or federal tax authority.\n3. If you use Shopify's default tax rates, confirm they're current and correct for your situation, and override them where needed.\n4. Check with a local tax authority or a tax accountant that you're charging the right rates and filing correctly.\n5. File and pay your taxes yourself, unless you use Shopify Tax with automated filing. Shopify's tax reports can help when it's time to file.",
+        "keywords": "tax registration, register for tax, register for vat, tax number, file taxes, remit tax, does shopify pay my taxes, tax authority, tax responsibility, tax compliance",
+        "source_url": "https://help.shopify.com/en/manual/taxes"
+    },
+    {
+        "slug": "pci-compliance",
+        "title": "PCI compliance",
+        "admin_page": "Settings → Payments",
+        "admin_path": "/settings/payments",
+        "page_summary": "PCI DSS is a security standard for organizations that store, process, or send credit card information. Shopify goes through a PCI DSS assessment every year and reissues its Attestation of Compliance after each one. It also posts a quarterly attestation from an approved scanning vendor. Shopify also publishes SOC reports on its security and availability controls.",
+        "steps": "1. Go to Shopify's Compliance Reports page in the Help Center.\n2. Log in to your Shopify account to view Shopify's PCI Attestation of Compliance.\n3. Check the latest quarterly ASV external vulnerability scan attestation, which is posted each quarter.\n4. If you need a security report to share, use the SOC 3 report, which can be shared freely.",
+        "keywords": "pci, pci dss, pci compliant, pci compliance, card data, credit card security, attestation of compliance, aoc, soc 2, soc 3, security compliance, payment security, compliant",
+        "source_url": "https://help.shopify.com/en/manual/privacy-and-security/account-security/compliance-reports"
+    },
+    {
+        "slug": "restricted-items",
+        "title": "Prohibited products",
+        "admin_page": "Settings → Payments",
+        "admin_path": "/settings/payments",
+        "page_summary": "To use Shopify Payments, your business type and products can't be on the prohibited list. Prohibited categories include regulated or illegal products (such as cannabis, prescription drugs, tobacco, firearms, and weapons), some financial services, adult content, products with unverified health claims, gambling, and counterfeit goods. The list isn't complete and it varies by region. The categories come from the Shopify Payments Terms of Service, and Shopify's Acceptable Use Policy has more detail.",
+        "steps": "1. Check that your business is in a country Shopify Payments supports.\n2. Compare your business type and products against the prohibited list for your country.\n3. Read Shopify's Acceptable Use Policy and the Shopify Payments Terms of Service for your country.\n4. Make sure you follow the laws and terms that apply to your country and industry.\n5. If you're not eligible for Shopify Payments, use a third-party payment provider that Shopify supports.",
+        "keywords": "prohibited products, restricted items, banned products, can i sell, allowed to sell, acceptable use policy, aup, cannabis, firearms, weapons, tobacco, prescription drugs, adult products, gambling, counterfeit, crypto, shopify payments eligibility, illegal",
+        "source_url": "https://help.shopify.com/en/manual/payments/shopify-payments/onboarding/eligibility"
+    },
+    {
+        "slug": "marketing-consent",
+        "title": "Email marketing consent",
+        "admin_page": "Settings → Checkout",
+        "admin_path": "/settings/checkout",
+        "page_summary": "Customers can agree to receive marketing through a newsletter sign-up form, a checkbox at checkout, or when they sign in to their account. You can let Shopify decide which regions see the checkbox already ticked, or choose the regions yourself. Double opt-in sends a confirmation email that customers click to confirm, and it's required by law in some countries, such as Germany, and can help with GDPR. Shopify says these settings aren't a substitute for legal advice, and you should only send promotional emails to customers who agreed to receive them.",
+        "steps": "1. In your Shopify admin, open Settings → Checkout.\n2. In the Marketing opt-in section, select Email.\n3. Choose Regions recommended by Shopify, or click Regions you choose → Edit, select regions, and save.\n4. Click Save.\n5. To turn on double opt-in, open Settings → Notifications → Customer notifications. In Marketing double opt-in, select Customer marketing confirmation.",
+        "keywords": "marketing consent, email consent, accepts marketing, opt in, opt-in, double opt-in, newsletter consent, subscribe, spam, can-spam, gdpr, consent law, preselected checkbox, sms consent, compliant",
+        "source_url": "https://help.shopify.com/en/manual/promoting-marketing/create-marketing/customer-contact-information"
+    },
+    {
+        "slug": "store-accessibility",
+        "title": "Store accessibility",
+        "admin_page": "Online Store → Themes",
+        "admin_path": "/themes",
+        "page_summary": "Shopify publishes accessibility guidelines for themes, and they're based on WCAG. They cover color contrast, heading order, text size, links, image alt text, slideshows and videos, and keyboard focus. Following them doesn't guarantee your store is fully accessible.",
+        "steps": "1. Add alt text to product images from your Shopify admin, and to other theme images from the theme editor.\n2. In your theme settings, check that body and button text has a contrast ratio of at least 4.5:1 against its background.\n3. Keep body text at least 16px, and don't use justified text.\n4. Use headings in order, without skipping levels.\n5. Avoid autoplaying slideshows and videos. Add captions to videos, and transcripts for dialogue.",
+        "keywords": "accessibility, accessible store, wcag, ada, alt text, color contrast, screen reader, keyboard navigation, disability, compliant",
+        "source_url": "https://help.shopify.com/en/manual/online-store/themes/customizing-themes/accessibility"
+    }
+]

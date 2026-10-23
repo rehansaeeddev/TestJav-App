@@ -1,0 +1,289 @@
+{
+    "cases": [
+        {
+            "id": "legal-01",
+            "group": "legal",
+            "category": "legal",
+            "message": "do i need a cookie banner for my EU customers",
+            "expect": [
+                {
+                    "intent": "HowTo",
+                    "target": [
+                        "guide:customer-privacy",
+                        "guide:gdpr-compliance"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "legal-02",
+            "group": "legal",
+            "category": "legal",
+            "message": "is my store gdpr compliant",
+            "expect": [
+                {
+                    "intent": "HowTo",
+                    "target": [
+                        "guide:gdpr-compliance",
+                        "guide:customer-privacy"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "legal-03",
+            "group": "legal",
+            "category": "legal",
+            "message": "a customer emailed asking me to delete all their data, what do i do",
+            "expect": [
+                {
+                    "intent": "HowTo",
+                    "target": [
+                        "guide:customer-data-requests"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "legal-04",
+            "group": "legal",
+            "category": "legal",
+            "message": "customer wants a copy of the personal data we have on them",
+            "expect": [
+                {
+                    "intent": "HowTo",
+                    "target": [
+                        "guide:customer-data-requests"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "legal-05",
+            "group": "legal",
+            "category": "legal",
+            "message": "do i legally need a privacy policy",
+            "expect": [
+                {
+                    "intent": "HowTo",
+                    "target": [
+                        "guide:customer-privacy",
+                        "guide:store-policies",
+                        "guide:gdpr-compliance"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "legal-06",
+            "group": "legal",
+            "category": "legal",
+            "message": "can shopify write my terms of service for me",
+            "expect": [
+                {
+                    "intent": "HowTo",
+                    "target": [
+                        "guide:store-policies"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "legal-07",
+            "group": "legal",
+            "category": "legal",
+            "message": "what is the do not sell my personal information thing for california",
+            "expect": [
+                {
+                    "intent": "HowTo",
+                    "target": [
+                        "guide:data-sharing-opt-out"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "legal-08",
+            "group": "legal",
+            "category": "legal",
+            "message": "am i allowed to sell CBD oil on my store",
+            "expect": [
+                {
+                    "intent": "HowTo",
+                    "target": [
+                        "guide:restricted-items"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "legal-09",
+            "group": "legal",
+            "category": "legal",
+            "message": "can i sell knives on shopify",
+            "expect": [
+                {
+                    "intent": "HowTo",
+                    "target": [
+                        "guide:restricted-items"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "legal-10",
+            "group": "legal",
+            "category": "legal",
+            "message": "do i have to register for VAT before i start selling",
+            "expect": [
+                {
+                    "intent": "HowTo",
+                    "target": [
+                        "guide:tax-registration",
+                        "guide:taxes"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "legal-11",
+            "group": "legal",
+            "category": "legal",
+            "message": "does shopify pay my sales tax for me",
+            "expect": [
+                {
+                    "intent": "HowTo",
+                    "target": [
+                        "guide:tax-registration"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "legal-12",
+            "group": "legal",
+            "category": "legal",
+            "message": "is shopify pci compliant or do i need to do something for card security",
+            "expect": [
+                {
+                    "intent": "HowTo",
+                    "target": [
+                        "guide:pci-compliance"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "legal-13",
+            "group": "legal",
+            "category": "legal",
+            "message": "can i email customers who didnt tick the marketing box",
+            "expect": [
+                {
+                    "intent": "HowTo",
+                    "target": [
+                        "guide:marketing-consent"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "legal-14",
+            "group": "legal",
+            "category": "legal",
+            "message": "how do i turn on double opt in for my newsletter",
+            "expect": [
+                {
+                    "intent": "HowTo",
+                    "target": [
+                        "guide:marketing-consent"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "legal-15",
+            "group": "legal",
+            "category": "legal",
+            "message": "is a refund policy required by law",
+            "expect": [
+                {
+                    "intent": "HowTo",
+                    "target": [
+                        "guide:store-policies"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "legal-16",
+            "group": "legal",
+            "category": "legal",
+            "message": "does my store need to be ADA accessible",
+            "expect": [
+                {
+                    "intent": "HowTo",
+                    "target": [
+                        "guide:store-accessibility"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "legal-17",
+            "group": "legal",
+            "category": "legal",
+            "message": "how do i set up the data sharing opt out page",
+            "expect": [
+                {
+                    "intent": "HowTo",
+                    "target": [
+                        "guide:data-sharing-opt-out"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "legal-18",
+            "group": "legal",
+            "category": "legal",
+            "message": "what are my gdpr responsibilities and what does shopify handle",
+            "expect": [
+                {
+                    "intent": "HowTo",
+                    "target": [
+                        "guide:gdpr-compliance"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "legal-19",
+            "group": "legal",
+            "category": "legal",
+            "message": "a german customer says our newsletter signup isnt legal",
+            "expect": [
+                {
+                    "intent": "HowTo",
+                    "target": [
+                        "guide:marketing-consent"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "legal-20",
+            "group": "legal",
+            "category": "legal",
+            "message": "should a lawyer check my store policies",
+            "expect": [
+                {
+                    "intent": "HowTo",
+                    "target": [
+                        "guide:store-policies"
+                    ]
+                }
+            ]
+        }
+    ]
+}
